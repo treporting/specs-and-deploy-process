@@ -88,7 +88,7 @@ A release is a baseline of specs-and-deploy-product, its label in a form the pro
 
 | Platform | Launch | Release | Library |
 |---|---|---|---|
-| treporting | 1_tools | | |
+| treporting | 1_tools | specs-and-deploy-process T046 | tools T046.0 |
 | treporting | 1_demo | | |
 | treporting | 2_selfhosted | | |
 | treporting | 2_tools | | |
@@ -275,3 +275,4 @@ as soon as possible (PROC_07)
 | 30.1.1 | 2026-11-13 | Rules: the table, function and feature of every rule | #657 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 31.1.1 | 2026-11-13 | Rules: the table, platform_launch of every rule | #660 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 32.1.1 | 2026-11-14 | Platform and launches: no release of 1_tools yet | treporting/tools#13 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 33.1.1 | 2026-11-15 | Platform and launches: 1_tools with T046 and T046.0 | #666 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
