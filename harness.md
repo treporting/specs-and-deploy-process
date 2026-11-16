@@ -80,9 +80,8 @@ The platform is treporting, this organization on GitHub. The launches are the de
 tools our work needs, of the demo environment, and of a selfhosted environment. An object (requirement
 etc.) names the launches it is planned for in `platform_launch`.
 
-A release is a baseline of specs-and-deploy-product, its label in a form the project chooses, such as
-`T044`. A library is a baseline of a code repo, its label a semantic version, such as `1.2.0`
-(PROC_06).
+A release is a baseline of specs-and-deploy-process or of specs-and-deploy-product. A library is a
+baseline of a code repo, its label a semantic version, such as `1.2.0` (PROC_06).
 
 **Table launches** - the launches of each platform, and the release and the library of each
 
@@ -135,8 +134,8 @@ to the process does not count into the maturity of the product. The rules are ke
 [rules.yaml](rules.yaml); the table below is generated from it whenever it changes, and names the
 hash of its content, `git hash-object rules.yaml`.
 
-<!-- generated from rules.yaml@70e65b7 - do not edit -->
-**Table rules** - the rules of the work, generated from rules.yaml@70e65b7
+<!-- generated from rules.yaml@34f7504 - do not edit -->
+**Table rules** - the rules of the work, generated from rules.yaml@34f7504
 
 | Id | Version | Rule |
 |---|---|---|
@@ -145,7 +144,7 @@ hash of its content, `git hash-object rules.yaml`.
 | PROC_03 | 1.1.3 | A change reaches `main` only through a pull request; `main` is protected. |
 | PROC_04 | 1.1.3 | A pull request passes the full gate before it is merged to `main`. |
 | PROC_05 | 1.1.3 | Every change of code realizes or verifies an approved requirement and names it in `@implements` or `@verifies`. Code is everything that is built or run - also configurations and container files. A schema is no code: it is the contract of the requirement it refines, and names it in `@refines`. |
-| PROC_06 | 1.1.3 | A baseline is a signed tag: in this repo (specs-and-deploy) it is a release, in any other repo a library. |
+| PROC_06 | 2.1.1 | A baseline is a signed tag: in specs-and-deploy-process and in specs-and-deploy-product it is a release, in any other repo a library. |
 | PROC_07 | 1.1.3 | Every release and every library writes its data into the reference edgedb. |
 | PROC_08 | 2.2.3 | Every release has an SBOM, and the licences of its components are checked against Apache-2.0 (REG_EU2024-2847_02, REG_Licences_01). |
 | PROC_09 | 2.2.3 | A reported vulnerability is assessed and fixed without delay; one that is actively exploited is notified within 24 hours (REG_EU2024-2847_02, REG_EU2024-2847_03). |
@@ -276,3 +275,4 @@ as soon as possible (PROC_07)
 | 31.1.1 | 2026-11-13 | Rules: the table, platform_launch of every rule | #660 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 32.1.1 | 2026-11-14 | Platform and launches: no release of 1_tools yet | treporting/tools#13 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 33.1.1 | 2026-11-15 | Platform and launches: 1_tools with T046 and T046.0 | #666 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 34.1.1 | 2026-11-16 | Platform and launches: a release is a baseline of specs-and-deploy-process or of specs-and-deploy-product; PROC_06 2.1.1 | #668 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
