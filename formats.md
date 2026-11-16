@@ -173,8 +173,8 @@ holds only what the author writes:
   architecture allocated no system requirement: why it stands, for instance derived from the view of
   its level (ISO29148, clause 5.2.8). The top - user needs, regulatory requirements, hazards -
   has no uplinks.
-- **status** of every requirement: `draft`, `review`, `approved`, `obsolete`; a requirement starts
-  as `draft` and is approved only after its review (PROC_13).
+- **status** of every requirement: one of the values of section Status values; a requirement
+  starts as `draft` and is approved only after its review (PROC_13).
 - **verification_method** of every requirement, a list - a requirement may be verified in more
   than one way, `[inspection, test]`. The values of ISO29148: `inspection`, `analysis`,
   `demonstration`, `test`; and of our own: `review` - verified by the review against the criteria
@@ -899,6 +899,27 @@ report made between two baselines leaves both empty.
 **Rejected**: one table of the test cases with their verdicts - a test procedure without a test
 case, and a test case without a result, would have no row.
 
+## Status values
+
+**Table status values** - the status values allowed for each kind of object
+
+| Kind | Values | Set by |
+|---|---|---|
+| R - requirement | `draft`, `review`, `approved`, `obsolete` | the author; `approved` after its review (PROC_13) |
+| SC - source code | `new`, `changed`, `unchanged` | the import, against the baseline before |
+| TC - test case | `draft`, `review`, `approved`, `obsolete` | the author; `approved` after its review |
+| TP - test procedure | `new`, `changed`, `unchanged` | the import, against the baseline before |
+| TR - test result | as the source writes it, such as `pass`, `fail` or `skip`; mapped: `passed`, `failed` | the run |
+
+**Decision**: source code and test procedures have the status of their change against the baseline
+before, not that of a requirement.
+
+**Why**: a unit of code and a test procedure pass no review of their own; the merge approves them.
+What a baseline shows of them is whether they changed.
+
+**Rejected**: `draft`, `review`, `approved`, `obsolete`, as of a requirement - they name the steps of a
+review, which code does not pass on its own.
+
 ## Open
 
 - `treporting = 1_tools` - **The test level of the tools**: the tests of the tools lie as
@@ -948,3 +969,4 @@ case, and a test case without a result, would have no row.
 | 37.1.1 | 2026-11-13 | Reviews: every repo its own criteria and results | #629 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 38.1.1 | 2026-11-13 | Table files of the levels: r4 gone | #653 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 39.1.1 | 2026-11-13 | Kinds of field: function and feature of a rule | #657 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 40.1.1 | 2026-11-16 | Status values: the values allowed for R, SC, TC, TP and TR | #663 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
