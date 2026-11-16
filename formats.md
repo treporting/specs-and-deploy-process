@@ -909,7 +909,7 @@ case, and a test case without a result, would have no row.
 | SC - source code | `new`, `changed`, `unchanged` | the import, against the baseline before |
 | TC - test case | `draft`, `review`, `approved`, `obsolete` | the author; `approved` after its review |
 | TP - test procedure | `new`, `changed`, `unchanged` | the import, against the baseline before |
-| TR - test result | as the source writes it, such as `pass`, `fail` or `skip`; mapped: `passed`, `failed` | the run |
+| TR - test result | `passed`, `failed`, `skipped` | the run |
 
 **Decision**: source code and test procedures have the status of their change against the baseline
 before, not that of a requirement.
