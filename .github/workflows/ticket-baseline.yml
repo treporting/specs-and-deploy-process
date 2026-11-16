@@ -1,6 +1,7 @@
 # The baseline of specs-and-deploy, started by the label baseline on one of its tickets (TOOL_27).
 # The work is in baseline.yml of tools; see its README.md, section baseline. This repo holds no code:
-# the steps take the version of Go from the tools.
+# the steps take the version of Go from the tools. The tools are taken at the tag of their baseline,
+# the same after the @ and in tools-ref; a pull request raises both.
 name: ticket-baseline
 
 on:
@@ -13,7 +14,8 @@ permissions:
 jobs:
   baseline:
     if: github.event.label.name == 'baseline'
-    uses: treporting/tools/.github/workflows/baseline.yml@main
+    uses: treporting/tools/.github/workflows/baseline.yml@T047.0
     with:
+      tools-ref: T047.0
       go-version-file: .build-steps/go.mod
     secrets: inherit
