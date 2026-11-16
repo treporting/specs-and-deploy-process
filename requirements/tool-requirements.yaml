@@ -187,11 +187,11 @@ requirements:
   status: approved
   verification_method: [test]
 - object_key: TOOL_17
-  object_version: '1.1.3'
+  object_version: '1.1.4'
   feature: versions
   object_text: refuse to make a baseline that holds both ends of a suspect link, compared with the
     versions in that baseline
-  source_ids: [PROC_06@1.1.1, PROC_20@2.1.1]
+  source_ids: [PROC_06@2.1.1, PROC_20@2.1.1]
   priority: 'medium'
   platform_launch: treporting = 3_tools
   safety: ''
@@ -297,7 +297,7 @@ requirements:
   status: approved
   verification_method: [test]
 - object_key: TOOL_27
-  object_version: '3.1.1'
+  object_version: '3.1.2'
   feature: baseline
   object_text: 'prepare the baseline of a repo when the label `baseline` is set on a ticket of that
     repo, with the label of the baseline the ticket names - run the loop for every release or library
@@ -306,7 +306,7 @@ requirements:
     the ticket only where every step passes, and name the result in the ticket; record both tags in
     sbom.md; fail where the branch or the tag of the label exists, or where a ref the caller names
     is not a tag'
-  source_ids: [PROC_02@1.1.1, PROC_06@1.1.1, PROC_08@2.2.1]
+  source_ids: [PROC_02@1.1.1, PROC_06@2.1.1, PROC_08@2.2.1]
   priority: 'medium'
   platform_launch: treporting = 1_tools
   safety: ''
