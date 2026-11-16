@@ -13,7 +13,7 @@ licence and its PURL. It is written by the tool sbom (TOOL_21) and not edited by
 
 | PURL | Name | Version | Licence |
 |---|---|---|---|
-| pkg:github/treporting/specs-and-deploy-process@T046 | specs-and-deploy-process | T046 | Apache-2.0 |
+| pkg:github/treporting/specs-and-deploy-process@T047 | specs-and-deploy-process | T047 | Apache-2.0 |
 
 ## Open
 
@@ -24,3 +24,4 @@ licence and its PURL. It is written by the tool sbom (TOOL_21) and not edited by
 | Version | Date | Change | Reason | By |
 |---|---|---|---|---|
 | 1.1.1 | 2026-11-15 | T046 | #664 | sbom 1a45bbb |
+| 2.1.1 | 2026-11-16 | T047 | #673 | sbom c68914a |
