@@ -80,8 +80,7 @@ The platform is treporting, this organization on GitHub. The launches are the de
 tools our work needs, of the demo environment, and of a selfhosted environment. An object (requirement
 etc.) names the launches it is planned for in `platform_launch`.
 
-A release is a baseline of specs-and-deploy-process or of specs-and-deploy-product, its label in a
-form the project chooses, such as `T046`. A library is a baseline of a code repo, its label a semantic version, such as `1.2.0`
+A release is a baseline of specs-and-deploy-process or of specs-and-deploy-product. A library is a baseline of a code repo, its label a semantic version, such as `1.2.0`
 (PROC_06).
 
 **Table launches** - the launches of each platform, and the release and the library of each
