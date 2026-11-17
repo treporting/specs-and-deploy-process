@@ -15,7 +15,7 @@ maturity, introductions - stays in Markdown beside it and refers to the YAML.
 |---|---|---|---|
 | h1, h2 | `safety/hazards.yaml` (HAZ, HAZC); threats (THR, THRC): see Open in harness.md | `safety/hazard-and-risk-analysis.md` | specs-and-deploy-product |
 | n1 | `regulatory/<module>.yaml` (REG), one file per module | `regulatory/regulatory-requirements.md` | specs-and-deploy-process |
-| r1 | `requirements/user-needs.yaml` (UN) | `requirements/user-needs.md` | specs-and-deploy-product |
+| r1 | `requirements/user-needs/<class>.yaml` (UN), one file per class | `requirements/user-needs.md` | specs-and-deploy-product |
 | r2 | `requirements/system-requirements.yaml` (SYS) | `requirements/system-requirements.md` | specs-and-deploy-product |
 | r3 | `architecture/system-architecture.yaml` (ARC, with the allocation) | `architecture/system-architecture.md` | specs-and-deploy-product |
 | r2 | `requirements/tool-requirements.yaml` (TOOL) | `requirements/tool-requirements.md` | specs-and-deploy-process |
@@ -970,3 +970,4 @@ review, which code does not pass on its own.
 | 38.1.1 | 2026-11-13 | Table files of the levels: r4 gone | #653 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 39.1.1 | 2026-11-13 | Kinds of field: function and feature of a rule | #657 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 40.1.1 | 2026-11-16 | Status values: the values allowed for R, SC, TC, TP and TR | #663 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 41.1.1 | 2026-11-17 | Table files of the levels: one file per class of user needs | treporting/specs-and-deploy-product#18 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
