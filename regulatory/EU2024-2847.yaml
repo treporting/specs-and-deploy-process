@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_EU2024-2847_01
+- object_key: REG_EU2024-2847_1
   object_version: '1.1.1'
   category: Normative
   object_text: 'Annex I Part I - a product with digital elements is designed and produced for a
@@ -17,7 +17,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_EU2024-2847_02
+- object_key: REG_EU2024-2847_2
   object_version: '1.1.1'
   category: Normative
   object_text: 'Annex I Part II - the manufacturer handles vulnerabilities: keeps an SBOM, fixes
@@ -30,7 +30,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_EU2024-2847_03
+- object_key: REG_EU2024-2847_3
   object_version: '1.1.1'
   category: Normative
   object_text: 'Art. 14 - an actively exploited vulnerability is notified to the CSIRT designated as
@@ -43,7 +43,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_EU2024-2847_04
+- object_key: REG_EU2024-2847_4
   object_version: '1.1.1'
   category: Normative
   object_text: 'Art. 13(8) - vulnerabilities are handled over the support period, at least five

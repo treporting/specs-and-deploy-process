@@ -24,10 +24,10 @@ launch and stream). It stays right when a release is made.
 
 ## Documents to PDF
 
-`TOOL_01` to `TOOL_02`, `TOOL_30` to `TOOL_31`: in [tool-requirements.yaml](tool-requirements.yaml).
+`TOOL_1` to `TOOL_2`, `TOOL_30` to `TOOL_31`: in [tool-requirements.yaml](tool-requirements.yaml).
 
 A document handed to an auditor shows what it is, which version, which revision, and its status
-(REG_FDADI_01).
+(REG_FDADI_1).
 
 **How the documents are exported**:
 
@@ -86,11 +86,11 @@ Documents).
 
 ## Reviews
 
-`TOOL_03` to `TOOL_04`, `TOOL_11` and `TOOL_32`: in [tool-requirements.yaml](tool-requirements.yaml).
+`TOOL_3` to `TOOL_4`, `TOOL_11` and `TOOL_32`: in [tool-requirements.yaml](tool-requirements.yaml).
 
-The tools that create and check a review. `reviewcheck` checks every review result (TOOL_03,
+The tools that create and check a review. `reviewcheck` checks every review result (TOOL_3,
 TOOL_11) and runs on every pull request (TOOL_12). `reviewskeleton` writes the skeleton of a review
-result (TOOL_04). An approved object has a passed review of the content it has now (TOOL_32,
+result (TOOL_4). An approved object has a passed review of the content it has now (TOOL_32,
 PROC_13); a document a tool writes, with `generated`, needs none.
 
 ### How an approval is checked
@@ -120,7 +120,7 @@ the tag of a release for all approved objects.
 
 ## CI check
 
-`TOOL_05` to `TOOL_10`, `TOOL_12`, `TOOL_13` and `TOOL_20`: in [tool-requirements.yaml](tool-requirements.yaml).
+`TOOL_5` to `TOOL_10`, `TOOL_12`, `TOOL_13` and `TOOL_20`: in [tool-requirements.yaml](tool-requirements.yaml).
 
 The checks run on every pull request - one tool requirement per check.
 
@@ -154,7 +154,7 @@ A package of the SBOM is named by its PURL, such as `pkg:golang/gopkg.in/yaml.v3
 `TOOL_27` to `TOOL_28`: in [tool-requirements.yaml](tool-requirements.yaml).
 
 The baseline of a repo is a change of its own: it adds sbom.md to `main`. So it needs a ticket and
-a branch of that ticket (PROC_02).
+a branch of that ticket (PROC_2).
 
 **How a baseline is started**:
 
@@ -192,7 +192,7 @@ itself, as step 1 of the loop for every change asks (harness.md).
 | `main` changes between the run and the merge, so sbom.md does not describe what is tagged | the pull request fails where its packages are not those of its head (TOOL_28) |
 
 The last fault is a threat as well: a package delivered but missing from sbom.md hides its known
-vulnerabilities (REG_EU2024-2847_02).
+vulnerabilities (REG_EU2024-2847_2).
 
 ## test report
 

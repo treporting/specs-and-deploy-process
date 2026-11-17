@@ -86,7 +86,7 @@
               "data flow testing",
               "error guessing"
             ],
-            "description": "how the case was derived, after ISO/IEC/IEEE 29119-4, clause 5 (REG_ISO29119-4_01 to _03)"
+            "description": "how the case was derived, after ISO/IEC/IEEE 29119-4, clause 5 (REG_ISO29119-4_1 to _3)"
           },
           "target_ids": {
             "type": "array",

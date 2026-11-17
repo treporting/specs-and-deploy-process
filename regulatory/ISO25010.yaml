@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_ISO25010_01
+- object_key: REG_ISO25010_1
   object_version: '1.1.1'
   category: Normative
   object_text: '6.1 - functional suitability - the software provides the correct, complete and
@@ -16,7 +16,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO25010_02
+- object_key: REG_ISO25010_2
   object_version: '1.1.1'
   category: Normative
   object_text: '6.2 - performance efficiency - how the software performs relative to the resources
@@ -28,7 +28,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO25010_03
+- object_key: REG_ISO25010_3
   object_version: '1.1.1'
   category: Normative
   object_text: '6.3 - compatibility - how effectively the system shares information with other
@@ -40,7 +40,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO25010_04
+- object_key: REG_ISO25010_4
   object_version: '1.1.1'
   category: Normative
   object_text: '6.4 - interaction capability - how easily the software is operated, understood and
@@ -52,7 +52,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO25010_05
+- object_key: REG_ISO25010_5
   object_version: '1.1.1'
   category: Normative
   object_text: '6.5 - reliability - the system keeps a specified level of performance, prevents
@@ -64,7 +64,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO25010_06
+- object_key: REG_ISO25010_6
   object_version: '1.1.1'
   category: Normative
   object_text: '6.6 - security - the protection of data and of access to it: levels of
@@ -76,7 +76,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO25010_07
+- object_key: REG_ISO25010_7
   object_version: '1.1.1'
   category: Normative
   object_text: '6.7 - maintainability - how easily, effectively and efficiently the system is
@@ -88,7 +88,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO25010_08
+- object_key: REG_ISO25010_8
   object_version: '1.1.1'
   category: Normative
   object_text: '6.8 - flexibility - how easily the software adapts to new environments, scales up to
@@ -100,7 +100,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO25010_09
+- object_key: REG_ISO25010_9
   object_version: '1.1.1'
   category: Normative
   object_text: '6.9 - safety - how well the system avoids harm to people, property or the

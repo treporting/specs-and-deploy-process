@@ -1,4 +1,4 @@
-# The documents of a commit or tag as one ZIP of PDFs (TOOL_01), started by hand: Actions, pdf, Run
+# The documents of a commit or tag as one ZIP of PDFs (TOOL_1), started by hand: Actions, pdf, Run
 # workflow, with the commit or tag. The work is in pdf.yml of tools; see its README.md, section pdf.
 name: pdf
 

@@ -641,7 +641,7 @@ this form too: `RC_n`, `RR_n`.
 `SR_9`, `SR_99`, `SR_100`. The `module_prefix` of the document and the `object_id` give the key
 back: `TOOL` and 1 give `TOOL_1`. Every schema takes this form.
 
-**Why**: `object_id` is a number, as in the model; a leading zero is lost in it, and `TOOL_01`
+**Why**: `object_id` is a number, as in the model; a leading zero is lost in it, and `TOOL_1`
 would come back as `TOOL_1`.
 
 **Rejected**:

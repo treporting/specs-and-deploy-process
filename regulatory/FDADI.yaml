@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_FDADI_01
+- object_key: REG_FDADI_1
   object_version: '1.1.1'
   category: Normative
   object_text: 'data are complete, consistent and accurate - attributable, legible,

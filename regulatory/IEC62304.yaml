@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_IEC62304_01
+- object_key: REG_IEC62304_1
   object_version: '1.1.1'
   category: Normative
   object_text: '4.3; 5.3.5 - a software item gets the software safety class of the software system

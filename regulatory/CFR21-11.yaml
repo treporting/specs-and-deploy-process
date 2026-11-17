@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_CFR21-11_01
+- object_key: REG_CFR21-11_1
   object_version: '1.1.1'
   category: Normative
   object_text: '11.10(e) - keep a secure, computer-generated audit trail with time stamps of every
@@ -14,7 +14,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_CFR21-11_02
+- object_key: REG_CFR21-11_2
   object_version: '1.1.1'
   category: Normative
   object_text: '11.10(d), (g) - let only authorised people use the system, and check their authority
@@ -24,7 +24,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_CFR21-11_03
+- object_key: REG_CFR21-11_3
   object_version: '1.1.1'
   category: Normative
   object_text: '11.10(b) - produce accurate and complete copies of records, readable by people and
@@ -34,7 +34,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_CFR21-11_04
+- object_key: REG_CFR21-11_4
   object_version: '1.1.1'
   category: Normative
   object_text: '11.10(c) - protect records so that they can be retrieved accurately throughout their
@@ -44,7 +44,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_CFR21-11_05
+- object_key: REG_CFR21-11_5
   object_version: '1.1.1'
   category: Normative
   object_text: '11.50, 11.70 - an electronic signature shows the name of the signer, the time and

@@ -5,14 +5,14 @@ written for whoever sets up or changes that environment, and for the auditor who
 
 ## Tools are code
 
-**Decision**: PROC_05 holds for the tools of our work as for the code of the product. Editor
+**Decision**: PROC_5 holds for the tools of our work as for the code of the product. Editor
 settings, scripts and the CI are code. Every tool realizes an approved requirement. There is no
 part where something is built without one.
 
 **Why**: an auditor asks how the tools that build the product are controlled. With this rule the
 answer is the same as for the product: by requirements, reviewed and approved before the change.
 
-**Rejected**: to narrow PROC_05 to the code of the product, and rule the tools by PROC rules alone.
+**Rejected**: to narrow PROC_5 to the code of the product, and rule the tools by PROC rules alone.
 It is lighter, but it leaves a part without requirements.
 
 **Consequence**: the requirements on our tools are kept in `requirements/tool-requirements.yaml`,
@@ -66,7 +66,7 @@ How to read a version: `sw_vers`, `git --version`, `gh --version`, `go version`,
 | Module | Version | Licence | What for |
 |---|---|---|---|
 | `gopkg.in/yaml.v3` | 3.0.1 | MIT, Apache-2.0 | reading YAML |
-| `github.com/santhosh-tekuri/jsonschema/v6` | 6.0.3 | Apache-2.0 | checking a YAML against its JSON Schema (TOOL_05) |
+| `github.com/santhosh-tekuri/jsonschema/v6` | 6.0.3 | Apache-2.0 | checking a YAML against its JSON Schema (TOOL_5) |
 | `golang.org/x/text` | 0.14.0 | BSD-3-Clause | the messages of jsonschema; of the Go team |
 | `github.com/yuin/goldmark` | 1.7.8 | MIT | turning a document into HTML, as GitHub does (pdf) |
 | `github.com/chromedp/chromedp` | 0.14.2 | MIT | driving headless Chrome, which prints the HTML to PDF (pdf) |
@@ -131,7 +131,7 @@ changed it (README.md of tools), and the revision a review names stays a commit 
 ## Continuous integration
 
 **Decision**: `.github/workflows/tools.yml` runs on every pull request to `main`: the job
-`reviewcheck` (SR_09), the job `schemacheck` (SR_20), the job
+`reviewcheck` (SR_9), the job `schemacheck` (SR_20), the job
 `rulesetcheck` (SR_23), the job `annotationcheck` (SR_26, SR_31), the job `uplinkcheck`
 (SR_29) and the job `approvalcheck` (SR_81). Each is a required check in the ruleset `main is protected`, which has no bypass - a pull request whose
 job failed cannot be merged, by anyone. The job `linkcheck` (SR_34) runs beside them. It is no
@@ -162,7 +162,7 @@ check is named by its job, with `integration_id` 15368 - GitHub Actions. GitHub 
 check only after it has run once, so a new job runs green before it becomes required.
 
 **Why**: a run by hand leaves no record, and depends on the one who runs it; a run of the CI is
-recorded with the pull request, by a computer (REG_CFR21-11_01).
+recorded with the pull request, by a computer (REG_CFR21-11_1).
 
 **Rejected**:
 
@@ -181,7 +181,7 @@ formats.md, section Verifications, sets.
 The baseline of a repo is prepared by `.github/workflows/baseline.yml` of tools
 (TOOL_27, SR_61 to SR_65), started by the label `baseline` on a ticket of the repo. The run itself is
 in README.md of tools, section baseline. Where the run passes, it opens a pull request with sbom.md. A
-person merges it and sets the signed tag with the command in its description (PROC_06). Where a pull
+person merges it and sets the signed tag with the command in its description (PROC_6). Where a pull
 request changes sbom.md, the job `build / build` checks that it lists the packages of its head
 (TOOL_28).
 
@@ -239,11 +239,11 @@ today is set in the section Continuous integration.
 
 | Check | Tool requirement |
 |---|---|
-| every YAML file matches its schema | TOOL_05 |
-| every id in `@implements`, `@verifies` and `@refines` exists, and is approved, in the base commit of the pull request - a requirement added in the same pull request does not count (PROC_05) | TOOL_06 |
-| the annotations counted a second way, apart from the parser | TOOL_07 |
-| the uplink of every SR: the SYS it names exists in specs-and-deploy-product on `main` and is allocated to the subsystem of the SR | TOOL_08 |
-| an approved requirement names approved uplinks only | TOOL_09 |
+| every YAML file matches its schema | TOOL_5 |
+| every id in `@implements`, `@verifies` and `@refines` exists, and is approved, in the base commit of the pull request - a requirement added in the same pull request does not count (PROC_5) | TOOL_6 |
+| the annotations counted a second way, apart from the parser | TOOL_7 |
+| the uplink of every SR: the SYS it names exists in specs-and-deploy-product on `main` and is allocated to the subsystem of the SR | TOOL_8 |
+| an approved requirement names approved uplinks only | TOOL_9 |
 | every test file belongs to exactly one test level | TOOL_10 |
 | every review result keeps the rules of the section Reviews of formats.md, and the tests of the tools pass | TOOL_12 |
 | the ruleset of `main` on GitHub has the rules of `.github/rulesets/main.json` | TOOL_13 |

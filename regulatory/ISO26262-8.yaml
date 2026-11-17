@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_ISO26262-8_01
+- object_key: REG_ISO26262-8_1
   object_version: '1.1.1'
   category: Normative
   object_text: 'clause 11 - classify a software tool by its impact and by how surely its errors are

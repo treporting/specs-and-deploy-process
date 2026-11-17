@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_ISO26262-9_01
+- object_key: REG_ISO26262-9_1
   object_version: '1.1.1'
   category: Normative
   object_text: 'clause 5 - a safety requirement inherits the ASIL of the requirement it is derived

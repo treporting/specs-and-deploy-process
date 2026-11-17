@@ -23,7 +23,7 @@ treporting is a pure software project and is developed following the process of 
   - **assurance**: ISO15026 is proposed for the case why the tool can be relied on, in
     the tool qualification.
 - **project risks** are handled by the risk management process of ISO12207, clause 6.3.4.
-- REG_ISO26262-8_01, REG_IEC61508-3_01, REG_DO178C_01, REG_DO330_01 and REG_ISO13485_01 are
+- REG_ISO26262-8_1, REG_IEC61508-3_1, REG_DO178C_1, REG_DO330_1 and REG_ISO13485_1 are
   requirements on the tool from the domains of its users, not our process.
 
 ### Levels
@@ -81,7 +81,7 @@ tools our work needs, of the demo environment, and of a selfhosted environment. 
 etc.) names the launches it is planned for in `platform_launch`.
 
 A release is a baseline of specs-and-deploy-process or of specs-and-deploy-product. A library is a
-baseline of a code repo, its label a semantic version, such as `1.2.0` (PROC_06).
+baseline of a code repo, its label a semantic version, such as `1.2.0` (PROC_6).
 
 **Table launches** - the launches of each platform, and the release and the library of each
 
@@ -139,16 +139,16 @@ hash of its content, `git hash-object rules.yaml`.
 
 | Id | Version | Rule |
 |---|---|---|
-| PROC_01 | 1.1.3 | The language for tickets, code, code comments and documentation is English only. |
-| PROC_02 | 1.1.3 | Every change has a ticket in the org project treporting and a branch `<ticket number>-<slug>`. |
-| PROC_03 | 1.1.3 | A change reaches `main` only through a pull request; `main` is protected. |
-| PROC_04 | 1.1.3 | A pull request passes the full gate before it is merged to `main`. |
-| PROC_05 | 1.1.3 | Every change of code realizes or verifies an approved requirement and names it in `@implements` or `@verifies`. Code is everything that is built or run - also configurations and container files. A schema is no code: it is the contract of the requirement it refines, and names it in `@refines`. |
-| PROC_06 | 2.1.1 | A baseline is a signed tag: in specs-and-deploy-process and in specs-and-deploy-product it is a release, in any other repo a library. |
-| PROC_07 | 1.1.3 | Every release and every library writes its data into the reference edgedb. |
-| PROC_08 | 2.2.3 | Every release has an SBOM, and the licences of its components are checked against Apache-2.0 (REG_EU2024-2847_02, REG_Licences_01). |
-| PROC_09 | 2.2.3 | A reported vulnerability is assessed and fixed without delay; one that is actively exploited is notified within 24 hours (REG_EU2024-2847_02, REG_EU2024-2847_03). |
-| PROC_10 | 2.2.3 | Every release gets security fixes over the support period it states (REG_EU2024-2847_04). |
+| PROC_1 | 1.1.3 | The language for tickets, code, code comments and documentation is English only. |
+| PROC_2 | 1.1.3 | Every change has a ticket in the org project treporting and a branch `<ticket number>-<slug>`. |
+| PROC_3 | 1.1.3 | A change reaches `main` only through a pull request; `main` is protected. |
+| PROC_4 | 1.1.3 | A pull request passes the full gate before it is merged to `main`. |
+| PROC_5 | 1.1.3 | Every change of code realizes or verifies an approved requirement and names it in `@implements` or `@verifies`. Code is everything that is built or run - also configurations and container files. A schema is no code: it is the contract of the requirement it refines, and names it in `@refines`. |
+| PROC_6 | 2.1.1 | A baseline is a signed tag: in specs-and-deploy-process and in specs-and-deploy-product it is a release, in any other repo a library. |
+| PROC_7 | 1.1.3 | Every release and every library writes its data into the reference edgedb. |
+| PROC_8 | 2.2.3 | Every release has an SBOM, and the licences of its components are checked against Apache-2.0 (REG_EU2024-2847_2, REG_Licences_1). |
+| PROC_9 | 2.2.3 | A reported vulnerability is assessed and fixed without delay; one that is actively exploited is notified within 24 hours (REG_EU2024-2847_2, REG_EU2024-2847_3). |
+| PROC_10 | 2.2.3 | Every release gets security fixes over the support period it states (REG_EU2024-2847_4). |
 | PROC_11 | 2.1.3 | A document names no ticket, except in its change history; what is open, it states as open. The ticket names the document, not the other way round. |
 | PROC_12 | 2.1.3 | An object is merged before another names it. |
 | PROC_13 | 4.1.3 | Whatever has review criteria of its kind in `reviews/` is approved only when it passed its review against those criteria, and whatever it names as uplink is approved at that moment. A later change of an uplink does not take the approval back. A document a tool writes, with the verification method `generated`, is a record: the tool writes it complete, with the status `completed`, without a review. See traceability.md. |
@@ -170,7 +170,7 @@ and passes no review of its own. So a rule can be the uplink of an approved requ
 - the harness is the central safeguard: it sets how everything else is checked
 - it is improved iteratively: rules arise and change from the work
 - the merge is an approval with evidence: a rule reaches `main` only by ticket and pull request
-  (PROC_02, PROC_03), one concern each (PROC_16); the Product Owner merges, and git keeps who and
+  (PROC_2, PROC_3), one concern each (PROC_16); the Product Owner merges, and git keeps who and
   when
 
 **Rejected**: to review the rules of the harness against criteria, as requirements are. The rules
@@ -183,7 +183,7 @@ is reviewed by them.
 
 ## Loop for every change
 
-1. A ticket is the start of every change (PROC_02).
+1. A ticket is the start of every change (PROC_2).
 2. A branch is created for the ticket.
 3. The change is realized, in commits.
 4. If the change touches what has review criteria of its kind (PROC_13) - something new, or a
@@ -200,14 +200,14 @@ is reviewed by them.
     save a change of what is approved: where its review failed, the change is rejected. It is taken
     back on the branch, and only the review result and the tickets reach `main`. The approved
     version stands (traceability.md).
-11. A pull request takes the branch to `main` (PROC_03). The CI checks it, with the jobs of devops.md
-    (PROC_04).
+11. A pull request takes the branch to `main` (PROC_3). The CI checks it, with the jobs of devops.md
+    (PROC_4).
 12. The Product Owner merges. The merge is the approval.
 13. The branch is deleted automatically. Its commits stay in `main`.
 
 For code, step 3 means:
 
-- the requirement it realizes is approved (PROC_05)
+- the requirement it realizes is approved (PROC_5)
 - it compiles, the linter passes, the unit tests pass
 - update documentation
 - the quick gate passes before a commit
@@ -223,18 +223,18 @@ For code, step 3 means:
    - test coverage
    - structural debt
 7. write the test report
-8. create the SBOM (PROC_08)
-9. check the licences of the components (PROC_08)
-10. create a signed tag as approval (PROC_06)
+8. create the SBOM (PROC_8)
+9. check the licences of the components (PROC_8)
+10. create a signed tag as approval (PROC_6)
 
 *Note*: write the data of the release or library into a separate edgedb, kept as reference data
-as soon as possible (PROC_07)
+as soon as possible (PROC_7)
 
 ## Open
 
 - `treporting = 1_demo` - **Threats**: not decided whether treporting gets a threat analysis. One
   threat is known: a package delivered but missing from sbom.md hides its known vulnerabilities
-  (REG_EU2024-2847_02); TOOL_28 controls it.
+  (REG_EU2024-2847_2); TOOL_28 controls it.
 - `treporting = 3_tools` - **Process**: not decided whether treporting gets a tool qualification
   (ISO15026).
 

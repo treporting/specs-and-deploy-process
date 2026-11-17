@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_IEC61508-4_01
+- object_key: REG_IEC61508-4_1
   object_version: '1.1.1'
   category: Normative
   object_text: '3.5.8 - a safety function has a SIL, one of four discrete levels of its safety

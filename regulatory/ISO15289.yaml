@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_ISO15289_01
+- object_key: REG_ISO15289_1
   object_version: '1.1.1'
   category: Normative
   object_text: '6.2 - records compared to information items - a record is evidence that a process was
@@ -17,7 +17,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO15289_02
+- object_key: REG_ISO15289_2
   object_version: '1.1.1'
   category: Normative
   object_text: '9.1 - records, general - every process gives records as evidence of what was done and
@@ -29,7 +29,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO15289_03
+- object_key: REG_ISO15289_3
   object_version: '1.1.1'
   category: Normative
   object_text: '9.2 - generic content of a record - each record has an identifier of its own, names
@@ -41,7 +41,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO15289_04
+- object_key: REG_ISO15289_4
   object_version: '1.1.1'
   category: Normative
   object_text: '9.3 - specific records - the records of acceptance, assessment, configuration,
@@ -52,7 +52,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO15289_05
+- object_key: REG_ISO15289_5
   object_version: '1.1.1'
   category: Normative
   object_text: '9.3 - acceptance record - the acquirer confirms that the acceptance criteria are met;
@@ -63,7 +63,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO15289_06
+- object_key: REG_ISO15289_6
   object_version: '1.1.1'
   category: Normative
   object_text: '9.3 - assessment record (audit record) - what was assessed, the findings of
@@ -74,7 +74,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO15289_07
+- object_key: REG_ISO15289_7
   object_version: '1.1.1'
   category: Normative
   object_text: '9.3 - configuration record - the physical and functional characteristics of the
@@ -86,7 +86,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO15289_08
+- object_key: REG_ISO15289_8
   object_version: '1.1.1'
   category: Normative
   object_text: '9.3 - verification record - the results of the tests run, the environment they ran
@@ -98,7 +98,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO15289_09
+- object_key: REG_ISO15289_9
   object_version: '1.1.1'
   category: Normative
   object_text: '9.3 - validation record - evidence that the system fits its intended use: the
