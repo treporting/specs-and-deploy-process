@@ -46,7 +46,7 @@
         "properties": {
           "object_key": {
             "type": "string",
-            "pattern": "^UN_[A-Z]+_[0-9]+$"
+            "pattern": "^UN_[A-Z]+_[1-9][0-9]*$"
           },
           "object_version": {
             "type": "string",

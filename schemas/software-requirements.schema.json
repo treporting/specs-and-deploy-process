@@ -45,7 +45,7 @@
         "properties": {
           "object_key": {
             "type": "string",
-            "pattern": "^SR_[0-9]+$"
+            "pattern": "^SR_[1-9][0-9]*$"
           },
           "object_version": {
             "type": "string",
@@ -64,7 +64,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "pattern": "^(SYS|TOOL)_[0-9]+@[0-9]+\\.[0-9]+\\.[0-9]+$"
+              "pattern": "^(SYS|TOOL)_[1-9][0-9]*@[0-9]+\\.[0-9]+\\.[0-9]+$"
             },
             "minItems": 1
           },
