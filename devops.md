@@ -16,7 +16,7 @@ answer is the same as for the product: by requirements, reviewed and approved be
 It is lighter, but it leaves a part without requirements.
 
 **Consequence**: the requirements on our tools are kept in `requirements/tool-requirements.yaml`,
-with the ids `TOOL_nn`. A tool requirement names as uplink the PROC rule or the regulatory
+with the ids `TOOL_n`. A tool requirement names as uplink the PROC rule or the regulatory
 requirement it serves. It is reviewed and approved like every other requirement (PROC_13). Where the tools live,
 in which language, and their chain from requirement to code: [README.md of tools](https://github.com/treporting/tools/blob/main/README.md).
 
@@ -280,3 +280,4 @@ today is set in the section Continuous integration.
 | 19.1.1 | 2026-11-12 | The checks and the build steps from the repo tools | #641, #628 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 20.1.1 | 2026-11-13 | specs-and-deploy named by the repo it means now | #641 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 21.1.1 | 2026-11-13 | The allocation: r4 gone | #653 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 22.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

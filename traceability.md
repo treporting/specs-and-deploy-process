@@ -722,3 +722,4 @@ Markdown table, and the rules would be kept apart from every other requirement.
 | 14.1.1 | 2026-11-04 | Tests: the links of a test, the ways of testing, when a test is missing | #439 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 15.1.1 | 2026-11-13 | specs-and-deploy named by the repo it means now | #641 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 16.1.1 | 2026-11-13 | The allocation: r4 gone | #653 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 17.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

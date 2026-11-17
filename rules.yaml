@@ -105,7 +105,7 @@ rules:
   status: approved
   verification_method: []
 - object_key: PROC_10
-  object_version: '2.2.3'
+  object_version: '3.2.3'
   object_text: 'Every release gets security fixes over the support period it states (REG_EU2024-2847_4).'
   source_ids: [REG_EU2024-2847_4@1.1.1]
   function: rules

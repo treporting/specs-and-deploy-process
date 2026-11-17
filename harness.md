@@ -129,13 +129,13 @@ reasoned and written down, as here.
 
 ## Rules
 
-The ids are `PROC_nn`. They are kept apart from the ids of the requirements, so that keeping
+The ids are `PROC_n`. They are kept apart from the ids of the requirements, so that keeping
 to the process does not count into the maturity of the product. The rules are kept as data in
 [rules.yaml](rules.yaml); the table below is generated from it whenever it changes, and names the
 hash of its content, `git hash-object rules.yaml`.
 
-<!-- generated from rules.yaml@34f7504 - do not edit -->
-**Table rules** - the rules of the work, generated from rules.yaml@34f7504
+<!-- generated from rules.yaml@4cbd66c - do not edit -->
+**Table rules** - the rules of the work, generated from rules.yaml@4cbd66c
 
 | Id | Version | Rule |
 |---|---|---|
@@ -148,7 +148,7 @@ hash of its content, `git hash-object rules.yaml`.
 | PROC_7 | 1.1.3 | Every release and every library writes its data into the reference edgedb. |
 | PROC_8 | 2.2.3 | Every release has an SBOM, and the licences of its components are checked against Apache-2.0 (REG_EU2024-2847_2, REG_Licences_1). |
 | PROC_9 | 2.2.3 | A reported vulnerability is assessed and fixed without delay; one that is actively exploited is notified within 24 hours (REG_EU2024-2847_2, REG_EU2024-2847_3). |
-| PROC_10 | 2.2.3 | Every release gets security fixes over the support period it states (REG_EU2024-2847_4). |
+| PROC_10 | 3.2.3 | Every release gets security fixes over the support period it states (REG_EU2024-2847_4). |
 | PROC_11 | 2.1.3 | A document names no ticket, except in its change history; what is open, it states as open. The ticket names the document, not the other way round. |
 | PROC_12 | 2.1.3 | An object is merged before another names it. |
 | PROC_13 | 4.1.3 | Whatever has review criteria of its kind in `reviews/` is approved only when it passed its review against those criteria, and whatever it names as uplink is approved at that moment. A later change of an uplink does not take the approval back. A document a tool writes, with the verification method `generated`, is a record: the tool writes it complete, with the status `completed`, without a review. See traceability.md. |
@@ -276,3 +276,4 @@ as soon as possible (PROC_7)
 | 32.1.1 | 2026-11-14 | Platform and launches: no release of 1_tools yet | treporting/tools#13 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 33.1.1 | 2026-11-15 | Platform and launches: 1_tools with T046 and T046.0 | #666 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 34.1.1 | 2026-11-16 | Platform and launches: a release is a baseline of specs-and-deploy-process or of specs-and-deploy-product; PROC_06 2.1.1 | #668 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 35.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

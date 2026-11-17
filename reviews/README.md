@@ -66,3 +66,4 @@ the document and the revision it reviewed: the link runs from the review to the 
 | 6.1.1 | 2026-10-30 | The change history of a document; Change history | #323 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 7.1.1 | 2026-11-03 | The criteria of the test cases | #437 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 8.1.1 | 2026-11-12 | Table criteria: the criteria of this repo; criteria-r2.yaml for the tool requirements | #641, #628 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 9.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

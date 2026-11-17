@@ -15,9 +15,9 @@ criteria:
   question: Does it state what is given and what is expected, so that a run decides passed or failed?
 - object_key: RC_3
   source: REG_ISO29119-4_1, REG_ISO29119-4_2, REG_ISO29119-4_3 - the test design techniques
-  object_text: derived - its design_technique is one of the techniques of REG_ISO29119-4_1 to _03,
+  object_text: derived - its design_technique is one of the techniques of REG_ISO29119-4_1 to _3,
     and the case was derived by it
-  question: Is its design_technique one of the techniques of REG_ISO29119-4_1 to _03, and was the case derived by it?
+  question: Is its design_technique one of the techniques of REG_ISO29119-4_1 to _3, and was the case derived by it?
 - object_key: RC_4
   source: treporting
   object_text: targeted - its target_ids name requirements whose verification method holds test, at

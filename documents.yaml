@@ -8,20 +8,20 @@ documents:
   type: document
   object_version: '12.1.1'
   object_hash: '4c05ebf'
-  status: approved
+  status: draft
   verification_method: [review]
 - name: harness.md
   type: explanation
   level: rules
   object_version: '34.1.1'
   object_hash: 'd01c181'
-  status: approved
+  status: draft
   verification_method: [review]
 - name: devops.md
   type: document
   object_version: '21.1.1'
   object_hash: '279d54c'
-  status: approved
+  status: draft
   verification_method: [review]
 - name: definitions.md
   type: document
@@ -39,33 +39,33 @@ documents:
   type: document
   object_version: '43.1.1'
   object_hash: 'af9153b'
-  status: approved
+  status: draft
   verification_method: [review]
 - name: reviews/README.md
   type: document
   object_version: '8.1.1'
   object_hash: 'd0bbedb'
-  status: approved
+  status: draft
   verification_method: [review]
 - name: traceability.md
   type: document
   object_version: '16.1.1'
   object_hash: 'db93e51'
-  status: approved
+  status: draft
   verification_method: [review]
 - name: regulatory/regulatory-requirements.md
   type: explanation
   level: n1
   object_version: '9.1.1'
   object_hash: '7ce0611'
-  status: approved
+  status: draft
   verification_method: [review]
 - name: requirements/tool-requirements.md
   type: explanation
   level: tool
   object_version: '18.1.1'
   object_hash: 'a48a031'
-  status: approved
+  status: draft
   verification_method: [review]
 - name: sbom/sbom.md
   type: document

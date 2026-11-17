@@ -4,9 +4,9 @@ The requirements on the tools of our work. Tools are code (see [devops.md](../de
 tool realizes an approved requirement of this file. It is written for whoever builds a tool or
 reviews its requirement, and for the auditor who asks how the tools are controlled.
 
-The requirements themselves - ids `TOOL_nn` - are in [tool-requirements.yaml](tool-requirements.yaml),
+The requirements themselves - ids `TOOL_n` - are in [tool-requirements.yaml](tool-requirements.yaml),
 in the format of [formats.md](../formats.md). A tool requirement names as uplink the rule of the
-harness (`PROC_nn`) or the regulatory requirement (`REG_<module>_nn`) it serves. It is reviewed and approved
+harness (`PROC_n`) or the regulatory requirement (`REG_<module>_n`) it serves. It is reviewed and approved
 like every other requirement (PROC_13). Each section after Launches is a feature, the field `feature`.
 
 ## Launches
@@ -224,3 +224,4 @@ vulnerabilities (REG_EU2024-2847_2).
 | 16.1.1 | 2026-11-01 | Documents to PDF | #390 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 17.1.1 | 2026-11-02 | Reviews; Versions | #399 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 18.1.1 | 2026-11-04 | test report | #438 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 19.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

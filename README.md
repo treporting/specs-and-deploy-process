@@ -20,14 +20,14 @@ The data of every level is in YAML, what explains it in Markdown beside it - see
 
 | File | What it holds | Ids |
 |---|---|---|
-| [harness.md](harness.md) | how we work: the process we follow (ISO12207, ISO29119), our levels, the rules of our work, the loops for every change and every release | `PROC_nn` |
+| [harness.md](harness.md) | how we work: the process we follow (ISO12207, ISO29119), our levels, the rules of our work, the loops for every change and every release | `PROC_n` |
 | [documents.yaml](documents.yaml) | the type, level, version and status of every document | - |
 | [devops.md](devops.md) | the environment of our work: the tools, the rule that tools are code, and what the CI checks | - |
 | [definitions.md](definitions.md) | the terms: system, item, content, work product, release, library, baseline, traceability | - |
 | [formats.md](formats.md) | how requirements, documents, reviews, annotations and tests are written down; the schemas in [schemas/](schemas/) | - |
 | [standards.md](standards.md) | the process, safety and security standards per domain | - |
-| [regulatory/](regulatory/), [regulatory-requirements.md](regulatory/regulatory-requirements.md) | what standards and laws ask, one file per module | `REG_<module>_nn` |
-| [requirements/tool-requirements.yaml](requirements/tool-requirements.yaml), [.md](requirements/tool-requirements.md) | what the tools of our work have to do; tools are code (r2) | `TOOL_nn` |
+| [regulatory/](regulatory/), [regulatory-requirements.md](regulatory/regulatory-requirements.md) | what standards and laws ask, one file per module | `REG_<module>_n` |
+| [requirements/tool-requirements.yaml](requirements/tool-requirements.yaml), [.md](requirements/tool-requirements.md) | what the tools of our work have to do; tools are code (r2) | `TOOL_n` |
 | [reviews/](reviews/) | the criteria of the reviews of requirements and documents, and their results | `RC`, `RR` |
 
 Three repos hold the work, since #637:
@@ -40,7 +40,7 @@ Three repos hold the work, since #637:
   (r2), architecture (r3), hazards (h1, h2) - and the repos of its subsystems below that
 
 A repo names uplinks and schemas only in itself or in the repo above it. The software requirements
-(r5, `SR_nn`) live in the repo of their subsystem, next to the code that realizes them; an id is
+(r5, `SR_n`) live in the repo of their subsystem, next to the code that realizes them; an id is
 unique together with that repo and its document (formats.md, section Ids).
 
 ## How the ids hang together
@@ -87,3 +87,4 @@ and a branch of its own, and reaches `main` only through a pull request - see th
 | 10.1.1 | 2026-11-11 | Files: the user needs by the question they answer | #590 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 11.1.1 | 2026-11-12 | Table files: the three repos; the product and the tools left | #641, #628 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 12.1.1 | 2026-11-13 | The repo is specs-and-deploy-process: what it holds, and where the product and the tools are | #641 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 13.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
