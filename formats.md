@@ -99,7 +99,7 @@ a clause unique.
 - `requirements/regulatory/`: what is given and what we write would lie in one directory
 
 **Decision**: the id is `REG_<module>_nn`, numbered from 01 in each file, such as
-`REG_ISO26262-8_01`. A requirement that comes from more than one module is split, one per module.
+`REG_ISO26262-8_1`. A requirement that comes from more than one module is split, one per module.
 
 **Why**: an id is unique within its document only (section Ids); the module makes it unique in the
 project. `REG` shows the level, as `UN` does for the user needs. The module holds hyphens itself,
@@ -190,7 +190,7 @@ holds only what the author writes:
   of its parent, `UN_OPS_10@1.1.1` (PROC_20); so does an entry of `allocated`. Rejected: the
   uplink in `target_ids`, as it stood before - read so, parent and child turn round.
 - **controls** of a control of a hazard: the system requirements that realize it, with their
-  versions, `controls: [SYS_02@1.1.1]` - a down-link between two trees (traceability.md, section Links
+  versions, `controls: [SYS_2@1.1.1]` - a down-link between two trees (traceability.md, section Links
   between trees).
 
 ### Example
@@ -232,13 +232,13 @@ They are drafts until the gel schema stands; then they become a part of it, and 
 the storage compares both.
 
 **Why**: which schema belongs to a file stands where the file is read, and a tool needs no list of
-its own (TOOL_05). A schema gives the form of a requirement and realizes none, so it refines it.
+its own (TOOL_5). A schema gives the form of a requirement and realizes none, so it refines it.
 
 **Rejected**:
 
 - the schema in a comment of the YAML - no field, so neither a schema nor a tool can rely on it
 - a table of patterns of paths in the tool - a new kind of file that no one enters stays unchecked
-- `@implements` in a schema - a schema realizes no requirement (PROC_05)
+- `@implements` in a schema - a schema realizes no requirement (PROC_5)
 
 ### The head of a file
 
@@ -297,7 +297,7 @@ without a version.
 
 A document is reviewed like a requirement (`review` as its verification method), except a document
 a tool writes (see below). An exported document shows its version, its revision and its status
-(TOOL_02). Its `object_hash` is the content approved: `git hash-object` of its file, 7 characters,
+(TOOL_2). Its `object_hash` is the content approved: `git hash-object` of its file, 7 characters,
 set at the approval with the version, `''` before the first. It is the one attribute for x of a document (traceability.md, section The version
 of a document):
 
@@ -385,7 +385,7 @@ objects. A document with no open point has the section all the same, with `<empt
 ### Change history
 
 A document has a section `## Change history`, its last, after `## Open`. It logs every approved version
-since its inception (REG_ISO29119-3_01), one row each:
+since its inception (REG_ISO29119-3_1), one row each:
 
 | Version | Date | Change | Reason | By |
 |---|---|---|---|---|
@@ -467,7 +467,7 @@ from its verdict:
   when the reviewer decided. It is set with `completed`.
 
 **Why**: ISO15288 asks that each information item is identified - its version - and confirmed
-valid - its status (REG_ISO15288_02). ISO15289 asks a record for the date of record, the date
+valid - its status (REG_ISO15288_2). ISO15289 asks a record for the date of record, the date
 recorded and its status. In practice a review is open while it runs, and closed when the reviewer
 has decided; approved and rejected belong to what is reviewed, not to the review.
 
@@ -506,13 +506,13 @@ completed_at: '2026-10-26T15:30:00+01:00'
 criteria: reviews/criteria-r1.yaml
 criteria_revision: 'd5922d1'
 results:
-- object_key: RR_01
-  target_ids: [UN_PM_01]
+- object_key: RR_1
+  target_ids: [UN_PM_1]
   revision: '7215683'
   criteria:
-    RC_01: passed
-    RC_02: passed
-    RC_03:
+    RC_1: passed
+    RC_2: passed
+    RC_3:
       result: failed
       note: '"how far" can be read as a share or as a level - say which'
   verdict: failed
@@ -528,7 +528,7 @@ results:
 - a note with `: ` in it is written in quotes: unquoted, YAML reads a new key
 
 The schemas are `schemas/review-criteria.schema.json` and `schemas/review-result.schema.json`;
-what they cannot say - every criterion once, the reviewer not the author - TOOL_03 checks. See the
+what they cannot say - every criterion once, the reviewer not the author - TOOL_3 checks. See the
 loop for every change in [harness.md](harness.md).
 
 ## Verifications
@@ -592,7 +592,7 @@ repeated. A link to a pull request answers only the first.
 | Level | treporting | Example | Set by |
 |---|---|---|---|
 | system | treporting | - | r2 |
-| subsystem | a repo, ARC_01 to ARC_06; or the repo tools, which is not part of the product | reporter-trace, tools | r3 |
+| subsystem | a repo, ARC_1 to ARC_6; or the repo tools, which is not part of the product | reporter-trace, tools | r3 |
 | component | a group of packages with one responsibility | `trace`, `maturity` | the field `component` of an SR |
 | module | a Go package or JS module | `trace/gaps` | the code |
 | unit | a source file | `trace/gaps/mark.go` | the annotation, never by hand |
@@ -649,17 +649,17 @@ would come back as `TOOL_1`.
 - two or more digits, from 01 on (up to version 41.1.1) - a key could not be made again from its
   `module_prefix` and `object_id`
 
-**Decision**: the review results and the verifications name the keys as they are now. A review
-result whose target got a new key names as its revision the commit that changed the key; one whose
-criteria got new keys names as its criteria revision the commit that changed them. What a record
-quotes from a log stays as the log printed it.
+**Decision**: the review results and the verifications keep the keys they were written with. An
+object that got a new key passes a review of its own under that key, at the commit that changed it.
+What a record quotes from a log stays as the log printed it.
 
-**Why**: every key in the repo changes, the records too. A tool finds the target of a review result
-and its criteria in the revisions it names; a revision before the change does not hold the new key. A quote of a log
-that changed would no longer be what the tool printed.
+**Why**: a record holds for the revision it names, and only there does a tool find its target and
+its criteria; that revision holds the old keys. The criteria of a record may lie in another repo by
+now, where no commit of this repo changed them.
 
-**Rejected**: the records as they were written, with the old keys - two forms of keys would stand
-side by side.
+**Rejected**: the records renamed to the keys as they are now, naming the commit of the change as
+their revision (up to version 42.1.1) - where the criteria of a record lie in another repo now, no
+revision of this repo holds them with the new keys.
 
 ### Software requirements
 
@@ -670,7 +670,7 @@ side by side.
 - it names as a rule **one** system requirement as uplink; several only where the behaviour
   serves each of them
 - every subsystem repo is an element of its own in the architecture, so that the CI can check
-  the allocation: ARC_06 *extractor-SYSTEM* describes the kind; extractor-git, a second
+  the allocation: ARC_6 *extractor-SYSTEM* describes the kind; extractor-git, a second
   reporter or a second viewer each get an element of their own when their repo is made
 
 ## Annotations
@@ -679,18 +679,18 @@ The same in Go and JavaScript, in the comment right above the function, method, 
 test, with no blank line between:
 
 ```go
-// @implements SR_02@1.1.1, SR_03@2.1.1
+// @implements SR_2@1.1.1, SR_3@2.1.1
 func markGaps(trace *Trace) { ... }
 
-// @verifies SR_02@1.1.1
+// @verifies SR_2@1.1.1
 func TestMarkGapsNeverCovered(t *testing.T) { ... }
 ```
 
 ```js
-/** @implements SR_05@1.2.1 */
+/** @implements SR_5@1.2.1 */
 export function StatusBand(props) { ... }
 
-// @verifies SR_05@1.2.1
+// @verifies SR_5@1.2.1
 it('shows the hidden filters', () => { ... })
 ```
 
@@ -717,7 +717,7 @@ or `@verifies`. `@refines` is read apart from the lists: in the `$comment` of ea
 schemas/, though `*.json` is on the blacklist (SR_35).
 
 **Why**: for a risk, the question is which error goes unseen, and which does more harm.
-annotationcheck is a gate: it is to stop code that names a requirement not approved (PROC_05).
+annotationcheck is a gate: it is to stop code that names a requirement not approved (PROC_5).
 
 **Table failures of one list** - what can go wrong with one list alone
 
@@ -788,7 +788,7 @@ The tools keep theirs in `testcases/` of the repo tools, beside `software-requir
 Today only the tools have test cases, at r5tc.
 
 ```yaml
-- object_key: TC_01
+- object_key: TC_1
   object_version: '1.1.1'
   object_text: 'a completed document whose object_hash is not the hash of its file is reported'
   design_technique: equivalence partitioning
@@ -800,7 +800,7 @@ Today only the tools have test cases, at r5tc.
 - **object_text** states one case: what is given and what is expected. A positive and a negative
   case are two test cases.
 - **design_technique** names how the case was derived, one of the techniques of
-  REG_ISO29119-4_01 to _03, such as `equivalence partitioning` or `boundary value analysis`.
+  REG_ISO29119-4_1 to _3, such as `equivalence partitioning` or `boundary value analysis`.
 - **target_ids** names the requirements it verifies, with their version. A test case points to
   its requirement; the requirement does not name its test cases. Only a requirement whose
   verification method holds `test` has test cases.
@@ -872,20 +872,20 @@ implements none.
 
 | Requirement | Test case | Text | Status |
 |---|---|---|---|
-| SR_03@1.1.3 | TC_08@1.1.1 | a failed criterion without a note: reviewcheck reports the criterion | approved |
+| SR_3@1.1.3 | TC_8@1.1.1 | a failed criterion without a note: reviewcheck reports the criterion | approved |
 
 ## Test implementation
 
 | Requirement | Test case | Test procedure | File |
 |---|---|---|---|
-| SR_03@1.1.3 | TC_08@1.1.1 | TestAFailedCriterionHasANote | review/check/check_test.go |
+| SR_3@1.1.3 | TC_8@1.1.1 | TestAFailedCriterionHasANote | review/check/check_test.go |
 | SR_24@3.1.1 | | TestOnlyFirstInALineOfComment | annotation/check/check_test.go |
 
 ## Test execution
 
 | Requirement | Test case | Test procedure | Verdict |
 |---|---|---|---|
-| SR_03@1.1.3 | TC_08@1.1.1 | TestAFailedCriterionHasANote | passed |
+| SR_3@1.1.3 | TC_8@1.1.1 | TestAFailedCriterionHasANote | passed |
 ```
 
 A row of the change history names the label of the baseline in Change and its ticket in Reason. A
@@ -974,3 +974,4 @@ review, which code does not pass on its own.
 | 40.1.1 | 2026-11-16 | Status values: the values allowed for R, SC, TC, TP and TR | #663 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 41.1.1 | 2026-11-17 | Table files of the levels: one file per function of user needs; Table ids: UN_<function>_nn | treporting/specs-and-deploy-product#18 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 42.1.1 | 2026-11-17 | Ids: the number of a key has one or more digits, without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 43.1.1 | 2026-11-17 | Ids: the records keep the keys they were written with; the keys of the examples without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
