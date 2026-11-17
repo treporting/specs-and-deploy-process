@@ -609,27 +609,27 @@ annotation names software requirements of its own repo only.
 
 | Ids | What | Level |
 |---|---|---|
-| `HAZ_nn`, `THR_nn` | hazards, threats | h1 |
-| `HAZC_nn`, `THRC_nn` | the controls of a hazard, of a threat | h2 |
-| `REG_<module>_nn` | regulatory requirements; `<module>` is the short form of standards.md | n1 |
-| `UN_<function>_nn` | user needs | r1 |
-| `SYS_nn` | system requirements | r2 |
-| `ARC_nn` | subsystems, interfaces | r3 |
-| `ARCR_nn`, `ARCD_nn` | rationale and decisions of the architecture; a requirement a decision made possible names it as uplink | r3 |
-| `SR_nn` | software requirements of a subsystem - unique together with their context, the repo of the subsystem (LProject) and the document | r5 |
-| `TC_nn` | test cases of a test level - unique together with their context, the repo and the file | r1tc to r7tc |
-| `SA_nn` | software architecture of a subsystem | r6 |
-| `SAR_nn`, `SAD_nn` | rationale and decisions of the software architecture of a subsystem | r6 |
-| `SD_nn` | software design of a subsystem | r7 |
-| `PROC_nn` | rules of our work | rules |
-| `TOOL_nn` | requirements on the tools of our work; tools are code (devops.md) | tool |
+| `HAZ_n`, `THR_n` | hazards, threats | h1 |
+| `HAZC_n`, `THRC_n` | the controls of a hazard, of a threat | h2 |
+| `REG_<module>_n` | regulatory requirements; `<module>` is the short form of standards.md | n1 |
+| `UN_<function>_n` | user needs | r1 |
+| `SYS_n` | system requirements | r2 |
+| `ARC_n` | subsystems, interfaces | r3 |
+| `ARCR_n`, `ARCD_n` | rationale and decisions of the architecture; a requirement a decision made possible names it as uplink | r3 |
+| `SR_n` | software requirements of a subsystem - unique together with their context, the repo of the subsystem (LProject) and the document | r5 |
+| `TC_n` | test cases of a test level - unique together with their context, the repo and the file | r1tc to r7tc |
+| `SA_n` | software architecture of a subsystem | r6 |
+| `SAR_n`, `SAD_n` | rationale and decisions of the software architecture of a subsystem | r6 |
+| `SD_n` | software design of a subsystem | r7 |
+| `PROC_n` | rules of our work | rules |
+| `TOOL_n` | requirements on the tools of our work; tools are code (devops.md) | tool |
 
 **Decision**: a key is any number of parts joined by underscores, the last part the number:
-`SYS_09`, `UN_PSF_01`, `REG_ISO26262-8_01`, `x_y_z_00`. The keys of criteria and review results take
-this form too: `RC_nn`, `RR_nn`.
+`SYS_9`, `UN_STATUS_1`, `REG_ISO26262-8_1`, `x_y_z_1`. The keys of criteria and review results take
+this form too: `RC_n`, `RR_n`.
 
 **Why**: a part may hold a hyphen itself, as the module of a regulatory requirement does,
-`REG_ISO26262-8_01`. The underscore separates the parts without doubt, and every key has one form.
+`REG_ISO26262-8_1`. The underscore separates the parts without doubt, and every key has one form.
 
 **Rejected**:
 
@@ -637,15 +637,17 @@ this form too: `RC_nn`, `RR_nn`.
   stand side by side
 - `RC-nn` and `RR-nn` kept, as no keys of requirements - two forms of keys would stand side by side
 
-**Decision**: the number `nn` of a key has two or more digits, from 01 on: `SR_09`, `SR_99`,
-`SR_100`. Every schema takes this form.
+**Decision**: the number `n` of a key has one or more digits, from 1 on, without a leading zero:
+`SR_9`, `SR_99`, `SR_100`. The `module_prefix` of the document and the `object_id` give the key
+back: `TOOL` and 1 give `TOOL_1`. Every schema takes this form.
 
-**Why**: a level can hold more than 99 objects, as the test cases of the tools do. Two digits at
-least keep every key of today.
+**Why**: `object_id` is a number, as in the model; a leading zero is lost in it, and `TOOL_01`
+would come back as `TOOL_1`.
 
 **Rejected**:
 
-- three digits for every key, such as `SR_001` - every key of today would change
+- two or more digits, from 01 on (up to version 41.1.1) - a key could not be made again from its
+  `module_prefix` and `object_id`
 
 **Decision**: the review results and the verifications name the keys as they are now. A review
 result whose target got a new key names as its revision the commit that changed the key; one whose
@@ -971,3 +973,4 @@ review, which code does not pass on its own.
 | 39.1.1 | 2026-11-13 | Kinds of field: function and feature of a rule | #657 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 40.1.1 | 2026-11-16 | Status values: the values allowed for R, SC, TC, TP and TR | #663 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 41.1.1 | 2026-11-17 | Table files of the levels: one file per function of user needs; Table ids: UN_<function>_nn | treporting/specs-and-deploy-product#18 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 42.1.1 | 2026-11-17 | Ids: the number of a key has one or more digits, without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
