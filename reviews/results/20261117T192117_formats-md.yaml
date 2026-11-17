@@ -14,7 +14,7 @@ criteria_revision: 'f2058c1'
 results:
 - object_key: RR_01
   target_ids: [formats.md]
-  revision: '09a7efc'
+  revision: 'f0fbdc8'
   criteria:
     RC_01: passed
     RC_02: passed
