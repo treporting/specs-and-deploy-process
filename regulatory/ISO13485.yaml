@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_ISO13485_01
+- object_key: REG_ISO13485_1
   object_version: '1.1.1'
   category: Normative
   object_text: '4.1.6 - document procedures to validate software used in the quality management

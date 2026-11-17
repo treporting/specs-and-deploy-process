@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_ISO29119-4_01
+- object_key: REG_ISO29119-4_1
   object_version: '1.1.1'
   category: Normative
   object_text: '5.2 - specification-based test design techniques - test cases are derived from what
@@ -18,7 +18,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO29119-4_02
+- object_key: REG_ISO29119-4_2
   object_version: '1.1.1'
   category: Normative
   object_text: '5.3 - structure-based test design techniques - test cases are derived from the
@@ -31,7 +31,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO29119-4_03
+- object_key: REG_ISO29119-4_3
   object_version: '1.1.1'
   category: Normative
   object_text: '5.4 - experience-based test design techniques - test cases are derived from what the

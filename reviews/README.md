@@ -30,7 +30,7 @@ form. Six criteria, in [criteria-n1.yaml](criteria-n1.yaml).
 
 **Why**: the duty itself is set by the law or the standard; we cannot change it. What we write is
 its source and its text in own words (regulatory-requirements.md), and there an error can be made
-when it is written down - RC_01 for the source, RC_02 for the text.
+when it is written down - RC_1 for the source, RC_2 for the text.
 
 **Rejected**: the criteria of r1 taken over - unambiguous, singular, complete, consistent, necessary,
 feasible. They judge the duty, and a finding on it would change nothing we keep.
@@ -66,3 +66,4 @@ the document and the revision it reviewed: the link runs from the review to the 
 | 6.1.1 | 2026-10-30 | The change history of a document; Change history | #323 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 7.1.1 | 2026-11-03 | The criteria of the test cases | #437 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 8.1.1 | 2026-11-12 | Table criteria: the criteria of this repo; criteria-r2.yaml for the tool requirements | #641, #628 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 9.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

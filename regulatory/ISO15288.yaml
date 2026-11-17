@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_ISO15288_01
+- object_key: REG_ISO15288_1
   object_version: '1.1.1'
   category: Normative
   object_text: '6.3.5 - configuration management process - to manage system and system element
@@ -18,7 +18,7 @@ requirements:
   safety: ''
   status: approved
   verification_method: [inspection]
-- object_key: REG_ISO15288_02
+- object_key: REG_ISO15288_2
   object_version: '1.1.1'
   category: Normative
   object_text: '6.3.6 - information management process - each information item is identified; it is

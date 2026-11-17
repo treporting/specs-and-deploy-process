@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_Licences_01
+- object_key: REG_Licences_1
   object_version: '1.1.1'
   category: Normative
   object_text: 'a release hands on the licence texts and notices of every component it contains'

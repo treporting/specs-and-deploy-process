@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_ARP4754B_01
+- object_key: REG_ARP4754B_1
   object_version: '1.1.1'
   category: Normative
   object_text: '5.2.1 to 5.2.3 - a function gets its FDAL from the severity of its failure

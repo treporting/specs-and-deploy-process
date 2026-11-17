@@ -4,7 +4,7 @@ schema: schemas/regulatory-requirements.schema.json
 type: normative
 level: n1
 requirements:
-- object_key: REG_IEC61508-1_01
+- object_key: REG_IEC61508-1_1
   object_version: '1.1.1'
   category: Normative
   object_text: '7.6.2.9 - each SIL sets the target failure measure a system has to reach - a

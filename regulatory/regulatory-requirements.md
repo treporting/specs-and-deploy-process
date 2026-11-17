@@ -4,7 +4,7 @@ What standards and laws ask of treporting. They stand beside the user needs (r1)
 from a role, and they hold whether a user asks for them or not. The system requirements (r2) are
 derived from both, and every regulatory requirement that treporting realizes has at least one system requirement; one it does not realize says why.
 
-The requirements themselves - ids `REG_<module>_nn` - are in this directory, one file per module:
+The requirements themselves - ids `REG_<module>_n` - are in this directory, one file per module:
 a standard or its part, a law, a guidance, or the licences of the components. A file is named by
 the short form of [standards.md](../standards.md), in the format of [formats.md](../formats.md),
 section Regulatory requirements. Table modules names each file and its topic. Which system requirements
@@ -102,3 +102,4 @@ work keeps it, in its objects, documents and records and in the protected `main`
 | 7.1.1 | 2026-11-02 | Modules; Configuration and information | #422 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 8.1.1 | 2026-11-03 | Modules; Documentation: records | #97 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 9.1.1 | 2026-11-03 | Modules; Test design | #437 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 10.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

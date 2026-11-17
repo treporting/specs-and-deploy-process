@@ -5,7 +5,7 @@ schema: schemas/rules.schema.json
 type: rules
 level: rules
 rules:
-- object_key: PROC_01
+- object_key: PROC_1
   object_version: '1.1.3'
   object_text: 'The language for tickets, code, code comments and documentation is English only.'
   function: rules
@@ -15,7 +15,7 @@ rules:
   safety: ''
   status: approved
   verification_method: []
-- object_key: PROC_02
+- object_key: PROC_2
   object_version: '1.1.3'
   object_text: 'Every change has a ticket in the org project treporting and a branch `<ticket
     number>-<slug>`.'
@@ -26,7 +26,7 @@ rules:
   safety: ''
   status: approved
   verification_method: []
-- object_key: PROC_03
+- object_key: PROC_3
   object_version: '1.1.3'
   object_text: 'A change reaches `main` only through a pull request; `main` is protected.'
   function: rules
@@ -36,7 +36,7 @@ rules:
   safety: ''
   status: approved
   verification_method: []
-- object_key: PROC_04
+- object_key: PROC_4
   object_version: '1.1.3'
   object_text: 'A pull request passes the full gate before it is merged to `main`.'
   function: rules
@@ -46,7 +46,7 @@ rules:
   safety: ''
   status: approved
   verification_method: []
-- object_key: PROC_05
+- object_key: PROC_5
   object_version: '1.1.3'
   object_text: 'Every change of code realizes or verifies an approved requirement and names it in
     `@implements` or `@verifies`. Code is everything that is built or run - also configurations and
@@ -59,7 +59,7 @@ rules:
   safety: ''
   status: approved
   verification_method: []
-- object_key: PROC_06
+- object_key: PROC_6
   object_version: '2.1.1'
   object_text: 'A baseline is a signed tag: in specs-and-deploy-process and in specs-and-deploy-product
     it is a release, in any other repo a library.'
@@ -70,7 +70,7 @@ rules:
   safety: ''
   status: approved
   verification_method: []
-- object_key: PROC_07
+- object_key: PROC_7
   object_version: '1.1.3'
   object_text: 'Every release and every library writes its data into the reference edgedb.'
   function: rules
@@ -80,11 +80,11 @@ rules:
   safety: ''
   status: approved
   verification_method: []
-- object_key: PROC_08
+- object_key: PROC_8
   object_version: '2.2.3'
   object_text: 'Every release has an SBOM, and the licences of its components are checked against
-    Apache-2.0 (REG_EU2024-2847_02, REG_Licences_01).'
-  source_ids: [REG_EU2024-2847_02@1.1.1, REG_Licences_01@1.1.1]
+    Apache-2.0 (REG_EU2024-2847_2, REG_Licences_1).'
+  source_ids: [REG_EU2024-2847_2@1.1.1, REG_Licences_1@1.1.1]
   function: rules
   feature: baseline
   priority: 'medium'
@@ -92,11 +92,11 @@ rules:
   safety: ''
   status: approved
   verification_method: []
-- object_key: PROC_09
+- object_key: PROC_9
   object_version: '2.2.3'
   object_text: 'A reported vulnerability is assessed and fixed without delay; one that is actively
-    exploited is notified within 24 hours (REG_EU2024-2847_02, REG_EU2024-2847_03).'
-  source_ids: [REG_EU2024-2847_02@1.1.1, REG_EU2024-2847_03@1.1.1]
+    exploited is notified within 24 hours (REG_EU2024-2847_2, REG_EU2024-2847_3).'
+  source_ids: [REG_EU2024-2847_2@1.1.1, REG_EU2024-2847_3@1.1.1]
   function: rules
   feature: maintenance
   priority: 'medium'
@@ -105,9 +105,9 @@ rules:
   status: approved
   verification_method: []
 - object_key: PROC_10
-  object_version: '2.2.3'
-  object_text: 'Every release gets security fixes over the support period it states (REG_EU2024-2847_04).'
-  source_ids: [REG_EU2024-2847_04@1.1.1]
+  object_version: '3.2.3'
+  object_text: 'Every release gets security fixes over the support period it states (REG_EU2024-2847_4).'
+  source_ids: [REG_EU2024-2847_4@1.1.1]
   function: rules
   feature: maintenance
   priority: 'medium'

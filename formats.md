@@ -98,7 +98,7 @@ a clause unique.
 - one file per standard, such as `ISO26262.yaml`: clause 11 would be ambiguous in it
 - `requirements/regulatory/`: what is given and what we write would lie in one directory
 
-**Decision**: the id is `REG_<module>_nn`, numbered from 01 in each file, such as
+**Decision**: the id is `REG_<module>_n`, numbered from 1 in each file, such as
 `REG_ISO26262-8_1`. A requirement that comes from more than one module is split, one per module.
 
 **Why**: an id is unique within its document only (section Ids); the module makes it unique in the
@@ -107,7 +107,7 @@ so the underscore separates its parts.
 
 **Rejected**:
 
-- `<module>_nn`, without `REG`: the id would not tell its level
+- `<module>_n`, without `REG`: the id would not tell its level
 - a requirement with more than one module: it would belong in more than one file
 
 **Decision**: `object_text` begins with the clause, as its source names it, then ` - `, such as
@@ -975,3 +975,4 @@ review, which code does not pass on its own.
 | 41.1.1 | 2026-11-17 | Table files of the levels: one file per function of user needs; Table ids: UN_<function>_nn | treporting/specs-and-deploy-product#18 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 42.1.1 | 2026-11-17 | Ids: the number of a key has one or more digits, without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 43.1.1 | 2026-11-17 | Ids: the records keep the keys they were written with; the keys of the examples without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 44.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
