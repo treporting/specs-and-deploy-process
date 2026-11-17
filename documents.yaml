@@ -6,22 +6,22 @@ type: documents
 documents:
 - name: README.md
   type: document
-  object_version: '12.1.1'
-  object_hash: '4c05ebf'
-  status: draft
+  object_version: '13.1.1'
+  object_hash: '5e7aff8'
+  status: approved
   verification_method: [review]
 - name: harness.md
   type: explanation
   level: rules
-  object_version: '34.1.1'
-  object_hash: 'd01c181'
-  status: draft
+  object_version: '35.1.1'
+  object_hash: '96ee4c1'
+  status: approved
   verification_method: [review]
 - name: devops.md
   type: document
-  object_version: '21.1.1'
-  object_hash: '279d54c'
-  status: draft
+  object_version: '22.1.1'
+  object_hash: '5c10172'
+  status: approved
   verification_method: [review]
 - name: definitions.md
   type: document
@@ -37,35 +37,35 @@ documents:
   verification_method: [review]
 - name: formats.md
   type: document
-  object_version: '43.1.1'
-  object_hash: 'af9153b'
-  status: draft
+  object_version: '44.1.1'
+  object_hash: 'b3f701b'
+  status: approved
   verification_method: [review]
 - name: reviews/README.md
   type: document
-  object_version: '8.1.1'
-  object_hash: 'd0bbedb'
-  status: draft
+  object_version: '9.1.1'
+  object_hash: '1b2e746'
+  status: approved
   verification_method: [review]
 - name: traceability.md
   type: document
-  object_version: '16.1.1'
-  object_hash: 'db93e51'
-  status: draft
+  object_version: '17.1.1'
+  object_hash: '89a11bc'
+  status: approved
   verification_method: [review]
 - name: regulatory/regulatory-requirements.md
   type: explanation
   level: n1
-  object_version: '9.1.1'
-  object_hash: '7ce0611'
-  status: draft
+  object_version: '10.1.1'
+  object_hash: 'fa1e7c8'
+  status: approved
   verification_method: [review]
 - name: requirements/tool-requirements.md
   type: explanation
   level: tool
-  object_version: '18.1.1'
-  object_hash: 'a48a031'
-  status: draft
+  object_version: '19.1.1'
+  object_hash: '220ebd0'
+  status: approved
   verification_method: [review]
 - name: sbom/sbom.md
   type: document
