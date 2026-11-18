@@ -69,7 +69,7 @@ documents:
   verification_method: [review]
 - name: sbom/sbom.md
   type: document
-  object_version: '2.1.1'
-  object_hash: 'ea6749f'
+  object_version: '3.1.1'
+  object_hash: '543b424'
   status: completed
   verification_method: [generated]
