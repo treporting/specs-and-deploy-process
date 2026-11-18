@@ -669,9 +669,6 @@ revision of this repo holds them with the new keys.
   architecture, at most
 - it names as a rule **one** system requirement as uplink; several only where the behaviour
   serves each of them
-- every subsystem repo is an element of its own in the architecture, so that the CI can check
-  the allocation: ARC_6 *extractor-SYSTEM* describes the kind; extractor-git, a second
-  reporter or a second viewer each get an element of their own when their repo is made
 
 ## Annotations
 
@@ -976,3 +973,4 @@ review, which code does not pass on its own.
 | 42.1.1 | 2026-11-17 | Ids: the number of a key has one or more digits, without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 43.1.1 | 2026-11-17 | Ids: the records keep the keys they were written with; the keys of the examples without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 44.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 45.1.1 | 2026-11-18 | Software requirements: the bullet on subsystem repos removed | #689 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
