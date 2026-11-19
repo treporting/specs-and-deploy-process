@@ -198,6 +198,10 @@ vulnerabilities (REG_EU2024-2847_2).
 
 `TOOL_34`: in [tool-requirements.yaml](tool-requirements.yaml).
 
+## object code report
+
+`TOOL_35`: in [tool-requirements.yaml](tool-requirements.yaml).
+
 ## Open
 
 `<empty>`
@@ -225,3 +229,4 @@ vulnerabilities (REG_EU2024-2847_2).
 | 17.1.1 | 2026-11-02 | Reviews; Versions | #399 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 18.1.1 | 2026-11-04 | test report | #438 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 19.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 20.1.1 | 2026-11-19 | object code report | #688 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

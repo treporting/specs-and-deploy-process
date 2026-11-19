@@ -396,3 +396,16 @@ requirements:
   safety: ''
   status: approved
   verification_method: [demonstration]
+- object_key: TOOL_35
+  object_version: '1.1.1'
+  feature: object code report
+  object_text: write the object code report of each build output of a repo, such as a Go binary or a
+    JavaScript bundle, from that output and the coverage of the run of its tests that built it, without
+    failing
+  rationale: the levels oc1 and oc2 - only the build that made an output can read it, and the coverage
+    comes from the same run; the converter reads the report, as it reads the test report of TOOL_34
+  priority: 'medium'
+  platform_launch: treporting = 1_tools
+  safety: ''
+  status: draft
+  verification_method: [demonstration]
