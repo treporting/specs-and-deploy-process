@@ -19,9 +19,9 @@ maturity, introductions - stays in Markdown beside it and refers to the YAML.
 | r2 | `requirements/system-requirements.yaml` (SYS) | `requirements/system-requirements.md` | specs-and-deploy-product |
 | r3 | `architecture/system-architecture.yaml` (ARC, with the allocation) | `architecture/system-architecture.md` | specs-and-deploy-product |
 | r2 | `requirements/tool-requirements.yaml` (TOOL) | `requirements/tool-requirements.md` | specs-and-deploy-process |
-| r5 | `requirements/software-requirements.yaml` (SR) | `requirements/software-requirements.md` | the repo of the subsystem; in tools `software-requirements.yaml`, explained in its README.md |
+| r5 | `requirements/software-requirements.yaml` (SR) | `requirements/software-requirements.md` | the subsystem; in tools `software-requirements.yaml`, explained in its README.md |
 | r1tc, r2tc, r3tc | `testcases/<test level>.yaml` (TC), one file per test level; see Test cases | the explanation of their requirements | specs-and-deploy-product |
-| r5tc, r6tc, r7tc | `testcases/<test level>.yaml` (TC), one file per test level; see Test cases | the explanation of their requirements | the repo of the subsystem, or tools |
+| r5tc, r6tc, r7tc | `testcases/<test level>.yaml` (TC), one file per test level; see Test cases | the explanation of their requirements | the subsystem |
 | rules | `rules.yaml` (PROC) | `harness.md` | specs-and-deploy-process |
 
 A readable Markdown view of the YAML is generated on request only - save the table of the rules
@@ -33,8 +33,8 @@ A readable Markdown view of the YAML is generated on request only - save the tab
 it - the product, our process and tools, or both -, its name, the abbreviation of its name, what
 it holds and the clause it follows; a test level also the data its tests run with; a level of our
 process and tools also the level of the product it stands for, such as r1 for rules. Each repo
-specs-and-deploy-* has its own `levels.yaml`; tools and the repos of the subsystems use the one of
-the repo above them (#637). A tool that names a level takes the name from there.
+specs-and-deploy-* has its own `levels.yaml`; the subsystems use the one of the repo above them
+(#637). A tool that names a level takes the name from there.
 
 **Why**: the levels were named only in the tables of harness.md, which no tool reads, and each
 schema lists its keys apart, without a name. One file serves every tool, and the tables of
@@ -616,8 +616,8 @@ annotation names software requirements of its own repo only.
 | `SYS_n` | system requirements | r2 |
 | `ARC_n` | subsystems, interfaces | r3 |
 | `ARCR_n`, `ARCD_n` | rationale and decisions of the architecture; a requirement a decision made possible names it as uplink | r3 |
-| `SR_n` | software requirements of a subsystem - unique together with their context, the repo of the subsystem (LProject) and the document | r5 |
-| `TC_n` | test cases of a test level - unique together with their context, the repo and the file | r1tc to r7tc |
+| `SR_n` | software requirements of a subsystem - unique together with their context, the subsystem and the document | r5 |
+| `TC_n` | test cases of a test level - unique together with their context, the repo or the subsystem, and the file | r1tc to r7tc |
 | `SA_n` | software architecture of a subsystem | r6 |
 | `SAR_n`, `SAD_n` | rationale and decisions of the software architecture of a subsystem | r6 |
 | `SD_n` | software design of a subsystem | r7 |
@@ -974,3 +974,4 @@ review, which code does not pass on its own.
 | 43.1.1 | 2026-11-17 | Ids: the records keep the keys they were written with; the keys of the examples without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 44.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 45.1.1 | 2026-11-18 | Software requirements: the bullet on subsystem repos removed | #689 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 46.1.1 | 2026-11-19 | The files and ids of a subsystem: its place is the subsystem, not its repo; tools is a subsystem | #692 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
