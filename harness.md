@@ -33,8 +33,8 @@ generated from it whenever it changes, and names the hash of its content, `git h
 levels.yaml`. The levels of the product are in
 [levels.yaml of specs-and-deploy-product](https://github.com/treporting/specs-and-deploy-product/blob/main/levels.yaml) (#637).
 
-<!-- generated from levels.yaml@208b93d - do not edit -->
-**Table process & tools** - the levels of our process and of our tools, each by the level of the product it stands for, generated from levels.yaml@208b93d
+<!-- generated from levels.yaml@9de2f4e - do not edit -->
+**Table process & tools** - the levels of our process and of our tools, each by the level of the product it stands for, generated from levels.yaml@9de2f4e
 
 | Level | Key | Name | Abbreviation | Description | Reference | Data |
 |---|---|---|---|---|---|---|
@@ -42,6 +42,8 @@ levels.yaml`. The levels of the product are in
 | r2 | r2 | tool requirements | TOOL | the requirements of the tools of our work, which are not part of the product (TOOL) | - | - |
 | r5 | r5 | software requirements | SR | software requirements (SR) of the tools, in the repo tools | ISO12207, clause 6.4.3 - software requirements definition | - |
 | sc1 | sc1 | source code, function coverage | SC | the source code, measured by the share of its functions the tests call | ISO29119-4, clause 5.3 - structure-based test design | - |
+| oc1 | oc1 | object code, function coverage | OC | the functions of the source code in the built binary, measured by the share of them the tests call | ISO29119-4, clause 5.3 - structure-based test design | - |
+| oc2 | oc2 | object code, statement coverage | OC | the functions of the source code in the built binary, measured by the share of their statements the tests run | ISO29119-4, clause 5.3 - structure-based test design | - |
 | r5tc | r5tc | subsystem test | SwVal | the tools against their SR | ISO29119 | made in the test |
 | r5tp | r5tp | subsystem test procedure | SwVal TP | the tests of the tools in Go that carry out the test cases of r5tc, or verify an SR directly | ISO29119 | - |
 | r5tr | r5tr | subsystem test result | SwVal TR | the result of a run of a test procedure of r5tp | ISO29119 | - |
@@ -277,3 +279,4 @@ as soon as possible (PROC_7)
 | 33.1.1 | 2026-11-15 | Platform and launches: 1_tools with T046 and T046.0 | #666 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 34.1.1 | 2026-11-16 | Platform and launches: a release is a baseline of specs-and-deploy-process or of specs-and-deploy-product; PROC_06 2.1.1 | #668 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 35.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 36.1.1 | 2026-11-19 | Levels: oc1 and oc2 | #688 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

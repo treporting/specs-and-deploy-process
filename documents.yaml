@@ -15,7 +15,7 @@ documents:
   level: rules
   object_version: '35.1.1'
   object_hash: '96ee4c1'
-  status: approved
+  status: draft
   verification_method: [review]
 - name: devops.md
   type: document
