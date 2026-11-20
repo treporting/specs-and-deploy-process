@@ -978,3 +978,4 @@ review, which code does not pass on its own.
 | 44.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 45.1.1 | 2026-11-18 | Software requirements: the bullet on subsystem repos removed | #689 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 46.1.1 | 2026-11-19 | The files and ids of a subsystem: its place is the subsystem, not its repo; tools is a subsystem | #692 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 47.1.1 | 2026-11-20 | Software requirements: an ARC requirement as uplink | #697 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
