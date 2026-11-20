@@ -64,7 +64,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "pattern": "^(SYS|TOOL)_[1-9][0-9]*@[0-9]+\\.[0-9]+\\.[0-9]+$"
+              "pattern": "^(SYS|ARC|TOOL)_[1-9][0-9]*@[0-9]+\\.[0-9]+\\.[0-9]+$"
             },
             "minItems": 1
           },

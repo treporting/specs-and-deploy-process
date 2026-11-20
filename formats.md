@@ -667,8 +667,11 @@ revision of this repo holds them with the new keys.
   trace marks a missing link as gap"
 - it names no route and no view: where a behaviour shows - a route, its contract - is set by the
   architecture, at most
-- it names as a rule **one** system requirement as uplink; several only where the behaviour
-  serves each of them
+- it names as a rule **one** system requirement as uplink, or one requirement of the architecture
+  (`ARC_n`) on an interface of its subsystem that it realizes; several only where the behaviour
+  serves each of them. The architecture sets who exchanges what with whom, so the parameters of an
+  interface are its requirements, and the behaviour that realizes one derives from it, not from a
+  system requirement directly.
 
 ## Annotations
 
@@ -975,3 +978,4 @@ review, which code does not pass on its own.
 | 44.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 45.1.1 | 2026-11-18 | Software requirements: the bullet on subsystem repos removed | #689 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 46.1.1 | 2026-11-19 | The files and ids of a subsystem: its place is the subsystem, not its repo; tools is a subsystem | #692 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 47.1.1 | 2026-11-20 | Software requirements: an ARC requirement as uplink | #697 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
