@@ -667,8 +667,11 @@ revision of this repo holds them with the new keys.
   trace marks a missing link as gap"
 - it names no route and no view: where a behaviour shows - a route, its contract - is set by the
   architecture, at most
-- it names as a rule **one** system requirement as uplink; several only where the behaviour
-  serves each of them
+- it names as a rule **one** system requirement as uplink, or one requirement of the architecture
+  (`ARC_n`) on an interface of its subsystem that it realizes; several only where the behaviour
+  serves each of them. The architecture sets who exchanges what with whom, so the parameters of an
+  interface are its requirements, and the behaviour that realizes one derives from it, not from a
+  system requirement directly.
 
 ## Annotations
 
