@@ -23,6 +23,97 @@
     "level": {
       "const": "r3"
     },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "object_key",
+          "object_text",
+          "status",
+          "verification_method",
+          "object_version",
+          "priority",
+          "safety"
+        ],
+        "additionalProperties": false,
+        "attributes_for_version_x": [
+          "object_text",
+          "safety"
+        ],
+        "properties": {
+          "object_key": {
+            "type": "string",
+            "pattern": "^ARC_[1-9][0-9]*$"
+          },
+          "object_version": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "description": "x.y.z - x the text and the attributes for x, y the links, z every other attribute; set at the approval (traceability.md)"
+          },
+          "object_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^(SYS_|ARC[RD]_)[1-9][0-9]*@[0-9]+\\.[0-9]+\\.[0-9]+$"
+            },
+            "description": "its uplinks: system requirements, or the rationale or decision of the architecture that made it possible (formats.md, section Ids)"
+          },
+          "priority": {
+            "type": "string"
+          },
+          "safety": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "review",
+              "approved",
+              "obsolete"
+            ]
+          },
+          "verification_method": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "inspection",
+                "analysis",
+                "demonstration",
+                "test",
+                "review"
+              ]
+            },
+            "description": "how a requirement is verified: inspection, analysis, demonstration, test after ISO/IEC/IEEE 29148; review - our own value - by the review against the criteria of its level (PROC_13)"
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "description": "why it stands; required where it names no uplink (ISO/IEC/IEEE 29148, 5.2.8)"
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "source_ids"
+            ]
+          },
+          {
+            "required": [
+              "rationale"
+            ]
+          }
+        ]
+      },
+      "description": "the requirements of the architecture on its subsystems and interfaces; the elements name them in allocated (formats.md, section System architecture)"
+    },
     "elements": {
       "type": "array",
       "items": {
@@ -70,7 +161,7 @@
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "pattern": "^SYS_[1-9][0-9]*@[0-9]+\\.[0-9]+\\.[0-9]+$"
+                  "pattern": "^(SYS|ARC)_[1-9][0-9]*@[0-9]+\\.[0-9]+\\.[0-9]+$"
                 }
               },
               "priority": {
@@ -164,6 +255,13 @@
                 "type": "string",
                 "minLength": 1
               },
+              "allocated": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^(SYS|ARC)_[1-9][0-9]*@[0-9]+\\.[0-9]+\\.[0-9]+$"
+                }
+              },
               "priority": {
                 "type": "string"
               },
@@ -243,7 +341,7 @@
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "pattern": "^SYS_[1-9][0-9]*@[0-9]+\\.[0-9]+\\.[0-9]+$"
+                  "pattern": "^(SYS|ARC)_[1-9][0-9]*@[0-9]+\\.[0-9]+\\.[0-9]+$"
                 }
               },
               "priority": {
