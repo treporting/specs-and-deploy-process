@@ -614,7 +614,7 @@ annotation names software requirements of its own repo only.
 | `REG_<module>_n` | regulatory requirements; `<module>` is the short form of standards.md | n1 |
 | `UN_<function>_n` | user needs | r1 |
 | `SYS_n` | system requirements | r2 |
-| `ARC_n` | subsystems, interfaces | r3 |
+| `ARC_n` | subsystems, interfaces and models; the requirements of the architecture on them | r3 |
 | `ARCR_n`, `ARCD_n` | rationale and decisions of the architecture; a requirement a decision made possible names it as uplink | r3 |
 | `SR_n` | software requirements of a subsystem - unique together with their context, the subsystem and the document | r5 |
 | `TC_n` | test cases of a test level - unique together with their context, the repo or the subsystem, and the file | r1tc to r7tc |
@@ -661,6 +661,34 @@ now, where no commit of this repo changed them.
 their revision (up to version 42.1.1) - where the criteria of a record lie in another repo now, no
 revision of this repo holds them with the new keys.
 
+### System architecture
+
+- `architecture/system-architecture.yaml` holds three lists: `elements` - the subsystems, the
+  interfaces and the models, told apart by their `kind`; `requirements` - the requirements of the
+  architecture on them (`ARC_n`); `decisions` - its rationale and decisions (`ARCR_n`, `ARCD_n`)
+- a requirement of the architecture names a system requirement or a decision as uplink, or gives a
+  rationale; the elements it is on name it in `allocated`, as a subsystem names there the system
+  requirements allocated to it
+- each interface has a section of its own in `architecture/system-architecture.md`,
+  `### ARC_n <name> (<subsystem> → <subsystem>)`, that describes it; its requirements stand in
+  `requirements`, not there
+
+**Decision**: the requirements of the architecture are a list of their own, with no `kind`.
+`elements` stays one list: it only names the subsystems, interfaces and models; what they are is
+described in system-architecture.md.
+
+**Why**: an architecture defines the subsystems and the interfaces, and sets requirements on them.
+A requirement is no element: `kind` tells elements apart, and a requirement among them would be a
+kind that is none. `allocated` already says which requirements stand on an element.
+
+**Rejected**:
+
+- a `kind: requirement` among the elements - a requirement is no element
+- a list per kind, `subsystems` and `interfaces` - the elements are only named there, one list
+  serves
+- a field `of` on the requirement, naming its elements - `allocated` says it already, from the
+  other end
+
 ### Software requirements
 
 - a software requirement states **one behaviour** of its subsystem that a test can verify - "the
@@ -668,10 +696,10 @@ revision of this repo holds them with the new keys.
 - it names no route and no view: where a behaviour shows - a route, its contract - is set by the
   architecture, at most
 - it names as a rule **one** system requirement as uplink, or one requirement of the architecture
-  (`ARC_n`) on an interface of its subsystem that it realizes; several only where the behaviour
-  serves each of them. The architecture sets who exchanges what with whom, so the parameters of an
-  interface are its requirements, and the behaviour that realizes one derives from it, not from a
-  system requirement directly.
+  (`ARC_n`) on its subsystem or on one of its interfaces that it realizes; several only where the
+  behaviour serves each of them. The architecture sets who exchanges what with whom, so the
+  parameters of an interface are its requirements, and the behaviour that realizes one derives from
+  it, not from a system requirement directly.
 
 ## Annotations
 
@@ -979,3 +1007,4 @@ review, which code does not pass on its own.
 | 45.1.1 | 2026-11-18 | Software requirements: the bullet on subsystem repos removed | #689 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 46.1.1 | 2026-11-19 | The files and ids of a subsystem: its place is the subsystem, not its repo; tools is a subsystem | #692 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 47.1.1 | 2026-11-20 | Software requirements: an ARC requirement as uplink | #697 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 48.1.1 | 2026-11-21 | System architecture: the requirements of the architecture, a list of their own; a section per interface | #699 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
