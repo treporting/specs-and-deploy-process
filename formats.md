@@ -523,9 +523,25 @@ results:
 - a failed criterion is a block of `result` and `note`, so that the author knows what to change; a
   passed one may have a note as well, else it is just `passed`
 - `revision` is the commit of what is reviewed: the review counts for it only (SYS_75)
+- `file` is the file that holds the targets, by its path from the root of the repo, where an id
+  stands in more than one file of the repo - such as `SR_1` of two subsystems in one code repo;
+  elsewhere it is left out
 - the reviewer is not the author of what is reviewed (PROC_15)
 - a revision and a time are written in quotes: unquoted, YAML reads `7215683` as a number
 - a note with `: ` in it is written in quotes: unquoted, YAML reads a new key
+
+**Decision**: a result names the file of its targets where their id is not unique in the repo.
+
+**Why**: an id is unique together with its subsystem and its document (Ids); in a code repo that
+holds several subsystems, `SR_1` stands in each of them. Without the file, a result of the one
+could not be told from a result of the other.
+
+**Rejected**:
+
+- the file in every result - every result so far would change after its merge, which a record
+  must not
+- ids unique in the whole repo, the software requirements of a second subsystem counting on from
+  the first - the id of a requirement would depend on the subsystems beside it
 
 The schemas are `schemas/review-criteria.schema.json` and `schemas/review-result.schema.json`;
 what they cannot say - every criterion once, the reviewer not the author - TOOL_3 checks. See the
@@ -1020,3 +1036,4 @@ review, which code does not pass on its own.
 | 47.1.1 | 2026-11-20 | Software requirements: an ARC requirement as uplink | #697 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 48.1.1 | 2026-11-21 | System architecture: the requirements of the architecture, a list of their own; a section per interface | #699 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 49.1.1 | 2026-11-21 | System architecture: a rationale and a decision have a status | #701 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 50.1.1 | 2026-11-21 | Reviews: the file of the targets, where an id is not unique in the repo | #703 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
