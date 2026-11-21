@@ -402,7 +402,8 @@
         "required": [
           "object_key",
           "object_text",
-          "object_version"
+          "object_version",
+          "status"
         ],
         "additionalProperties": false,
         "attributes_for_version_x": [
@@ -421,6 +422,15 @@
           "object_text": {
             "type": "string",
             "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "review",
+              "approved",
+              "obsolete"
+            ],
+            "description": "as of a requirement; a requirement names it as uplink once it is approved (formats.md, System architecture)"
           }
         }
       }

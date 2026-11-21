@@ -669,6 +669,8 @@ revision of this repo holds them with the new keys.
 - a requirement of the architecture names a system requirement or a decision as uplink, or gives a
   rationale; the elements it is on name it in `allocated`, as a subsystem names there the system
   requirements allocated to it
+- a rationale and a decision have a `status`, as a requirement has; a requirement names one as
+  uplink, as it names any uplink, once it is approved
 - each interface has a section of its own in `architecture/system-architecture.md`,
   `### ARC_n <name> (<subsystem> → <subsystem>)`, that describes it; its requirements stand in
   `requirements`, not there
@@ -688,6 +690,15 @@ kind that is none. `allocated` already says which requirements stand on an eleme
   serves
 - a field `of` on the requirement, naming its elements - `allocated` says it already, from the
   other end
+
+**Decision**: a rationale and a decision have a `status` of their own.
+
+**Why**: a requirement may name a decision as uplink, and an uplink counts once it is approved
+(TOOL_9). Without a status, a requirement that a decision made possible could never be approved.
+
+**Rejected**: a decision taken as approved when system-architecture.md is approved - the uplink
+check would read another file than the one that names the uplink, and a decision would differ from
+every other object of the list.
 
 ### Software requirements
 
@@ -1008,3 +1019,4 @@ review, which code does not pass on its own.
 | 46.1.1 | 2026-11-19 | The files and ids of a subsystem: its place is the subsystem, not its repo; tools is a subsystem | #692 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 47.1.1 | 2026-11-20 | Software requirements: an ARC requirement as uplink | #697 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 48.1.1 | 2026-11-21 | System architecture: the requirements of the architecture, a list of their own; a section per interface | #699 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 49.1.1 | 2026-11-21 | System architecture: a rationale and a decision have a status | #701 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
