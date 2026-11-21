@@ -92,6 +92,11 @@
               "minLength": 1
             }
           },
+          "file": {
+            "type": "string",
+            "pattern": "^[^/].*\\.ya?ml$",
+            "description": "the file that holds the targets, by its path from the root of the repo; only where an id stands in more than one file of the repo (formats.md, Reviews)"
+          },
           "revision": {
             "type": "string",
             "pattern": "^[0-9a-f]{7,40}$"
