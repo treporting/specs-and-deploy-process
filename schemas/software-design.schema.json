@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/treporting/treporting/schemas/software-design.schema.json",
+  "title": "Software design of a subsystem (r7) with the allocation",
+  "description": "Draft until the gel schema stands (treporting/storage-edgedb#3); field names are the properties of the gel schema.",
+  "type": "object",
+  "required": [
+    "schema",
+    "type",
+    "level",
+    "elements"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "schemas/software-design.schema.json",
+      "description": "the schema of this file, from the root of the repo (formats.md, section Schemas)"
+    },
+    "type": {
+      "const": "design",
+      "description": "what this file holds (formats.md, section The head of a file)"
+    },
+    "level": {
+      "const": "r7"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "object_key",
+          "object_text",
+          "status",
+          "verification_method",
+          "object_version",
+          "priority",
+          "safety"
+        ],
+        "additionalProperties": false,
+        "attributes_for_version_x": [
+          "object_text",
+          "safety"
+        ],
+        "properties": {
+          "object_key": {
+            "type": "string",
+            "pattern": "^SD_[1-9][0-9]*$"
+          },
+          "object_version": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "description": "x.y.z - x the text and the attributes for x, y the links, z every other attribute; set at the approval (traceability.md)"
+          },
+          "object_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^SA_[1-9][0-9]*@[0-9]+\\.[0-9]+\\.[0-9]+$"
+            },
+            "description": "its uplinks: requirements of the software architecture of the subsystem (formats.md, section Software design)"
+          },
+          "priority": {
+            "type": "string"
+          },
+          "safety": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "review",
+              "approved",
+              "obsolete"
+            ]
+          },
+          "verification_method": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "inspection",
+                "analysis",
+                "demonstration",
+                "test",
+                "review"
+              ]
+            },
+            "description": "how a requirement is verified: inspection, analysis, demonstration, test after ISO/IEC/IEEE 29148; review - our own value - by the review against the criteria of its level (PROC_13)"
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "description": "why it stands; required where it names no uplink (ISO/IEC/IEEE 29148, 5.2.8)"
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "source_ids"
+            ]
+          },
+          {
+            "required": [
+              "rationale"
+            ]
+          }
+        ]
+      },
+      "description": "the requirements of the software design on its modules; the modules name them in allocated (formats.md, section Software design)"
+    },
+    "elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "object_key",
+          "object_text",
+          "kind",
+          "status",
+          "verification_method",
+          "object_version",
+          "priority",
+          "safety"
+        ],
+        "additionalProperties": false,
+        "attributes_for_version_x": [
+          "object_text",
+          "safety"
+        ],
+        "properties": {
+          "object_key": {
+            "type": "string",
+            "pattern": "^SD_[1-9][0-9]*$"
+          },
+          "object_version": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "description": "x.y.z - x the text and the attributes for x, y the links, z every other attribute; set at the approval (traceability.md)"
+          },
+          "object_text": {
+            "type": "string",
+            "minLength": 1,
+            "description": "the path of the module in the code, such as trace/gaps"
+          },
+          "kind": {
+            "const": "module"
+          },
+          "allocated": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^(SA|SD)_[1-9][0-9]*@[0-9]+\\.[0-9]+\\.[0-9]+$"
+            },
+            "description": "the requirements of the software architecture and of the software design it realizes (formats.md, section Software design)"
+          },
+          "priority": {
+            "type": "string"
+          },
+          "safety": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "review",
+              "approved",
+              "obsolete"
+            ]
+          },
+          "verification_method": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "inspection",
+                "analysis",
+                "demonstration",
+                "test",
+                "review"
+              ]
+            },
+            "description": "how a requirement is verified: inspection, analysis, demonstration, test after ISO/IEC/IEEE 29148; review - our own value - by the review against the criteria of its level (PROC_13)"
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "description": "why it stands; required where it names no uplink (ISO/IEC/IEEE 29148, 5.2.8)"
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "allocated"
+            ]
+          },
+          {
+            "required": [
+              "rationale"
+            ]
+          }
+        ]
+      }
+    },
+    "documents": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^([a-z0-9-]+/)*[A-Za-z0-9-]+\\.md$"
+      },
+      "description": "the Markdown files that explain this level, by their path from the root; their versions stand in documents.yaml (formats.md, section Documents)"
+    }
+  }
+}
