@@ -634,7 +634,7 @@ annotation names software requirements of its own repo only.
 | `UN_<function>_n` | user needs | r1 |
 | `SYS_n` | system requirements | r2 |
 | `ARC_n` | subsystems, interfaces and models; the requirements of the architecture on them | r3 |
-| `ARCR_n`, `ARCD_n` | rationale and decisions of the architecture; a requirement a decision made possible names it as uplink | r3 |
+| `ARCR_n`, `ARCD_n` | rationale and decisions of the architecture; a requirement a rationale or a decision made possible names it as uplink | r3 |
 | `SR_n` | software requirements of a subsystem - unique together with their context, the subsystem and the document | r5 |
 | `TC_n` | test cases of a test level - unique together with their context, the repo or the subsystem, and the file | r1tc to r7tc |
 | `SA_n` | software architecture of a subsystem | r6 |
@@ -685,9 +685,9 @@ revision of this repo holds them with the new keys.
 - `architecture/system-architecture.yaml` holds three lists: `elements` - the subsystems, the
   interfaces and the models, told apart by their `kind`; `requirements` - the requirements of the
   architecture on them (`ARC_n`); `decisions` - its rationale and decisions (`ARCR_n`, `ARCD_n`)
-- a requirement of the architecture names a system requirement or a decision as uplink, or gives a
-  rationale; the elements it is on name it in `allocated`, as a subsystem names there the system
-  requirements allocated to it
+- a requirement of the architecture names a system requirement, a rationale or a decision as
+  uplink, or gives a rationale; the elements it is on name it in `allocated`, as a subsystem names
+  there the system requirements allocated to it
 - a rationale and a decision have a `status`, as a requirement has; a requirement names one as
   uplink, as it names any uplink, once it is approved
 - each interface has a section of its own in `architecture/system-architecture.md`,
@@ -739,8 +739,8 @@ every other object of the list.
   `decisions` - its rationale and decisions (`SAR_n`, `SAD_n`)
 - a component names in `allocated` the software requirements it realizes, as a subsystem names the
   system requirements allocated to it
-- a requirement of the software architecture names a software requirement or a decision as
-  uplink, or gives a rationale
+- a requirement of the software architecture names a software requirement, a rationale or a
+  decision as uplink, or gives a rationale
 - `architecture/software-architecture.md` describes the components and each interface
 
 **Decision**: the software architecture of a subsystem takes the form of the system architecture,
@@ -1083,3 +1083,4 @@ review, which code does not pass on its own.
 | 49.1.1 | 2026-11-21 | System architecture: a rationale and a decision have a status | #701 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 50.1.1 | 2026-11-21 | Reviews: the file of the targets, where an id is not unique in the repo | #703 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 51.1.1 | 2026-11-22 | Table files of the levels, table types and Breakdown: r6 and r7; Software architecture; Software design | #705 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 52.1.1 | 2026-11-22 | Ids, System architecture, Software architecture: a rationale as uplink, as a decision | #707 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
