@@ -20,6 +20,8 @@ maturity, introductions - stays in Markdown beside it and refers to the YAML.
 | r3 | `architecture/system-architecture.yaml` (ARC, with the allocation) | `architecture/system-architecture.md` | specs-and-deploy-product |
 | r2 | `requirements/tool-requirements.yaml` (TOOL) | `requirements/tool-requirements.md` | specs-and-deploy-process |
 | r5 | `requirements/software-requirements.yaml` (SR) | `requirements/software-requirements.md` | the subsystem; in tools `software-requirements.yaml`, explained in its README.md |
+| r6 | `architecture/software-architecture.yaml` (SA, with the allocation) | `architecture/software-architecture.md` | the subsystem |
+| r7 | `design/software-design.yaml` (SD, with the allocation) | `design/software-design.md` | the subsystem |
 | r1tc, r2tc, r3tc | `testcases/<test level>.yaml` (TC), one file per test level; see Test cases | the explanation of their requirements | specs-and-deploy-product |
 | r5tc, r6tc, r7tc | `testcases/<test level>.yaml` (TC), one file per test level; see Test cases | the explanation of their requirements | the subsystem |
 | rules | `rules.yaml` (PROC) | `harness.md` | specs-and-deploy-process |
@@ -268,7 +270,8 @@ reviewed against.
 |---|---|---|---|
 | requirements | requirements | r1, r2, r5 | `requirements/*.yaml`; in tools `software-requirements.yaml` |
 | testcases | test cases | r1tc to r7tc | `testcases/*.yaml` |
-| architecture | the system architecture | r3 | `architecture/system-architecture.yaml` |
+| architecture | the system architecture, the software architecture of a subsystem | r3, r6 | `architecture/system-architecture.yaml`, `architecture/software-architecture.yaml` |
+| design | the software design of a subsystem | r7 | `design/software-design.yaml` |
 | normative | regulatory requirements | n1 | `regulatory/<module>.yaml` |
 | hazards | hazards and their controls | h1 | `safety/hazards.yaml` |
 | threats | threats and their controls: see Open in harness.md | h1 | - |
@@ -609,8 +612,8 @@ repeated. A link to a pull request answers only the first.
 |---|---|---|---|
 | system | treporting | - | r2 |
 | subsystem | a repo, ARC_1 to ARC_6; or the repo tools, which is not part of the product | reporter-trace, tools | r3 |
-| component | a group of packages with one responsibility | `trace`, `maturity` | the field `component` of an SR |
-| module | a Go package or JS module | `trace/gaps` | the code |
+| component | a group of packages with one responsibility | `trace`, `maturity` | r6 (`SA_n`) |
+| module | a Go package or JS module | `trace/gaps` | r7 (`SD_n`), named by its path in the code |
 | unit | a source file | `trace/gaps/mark.go` | the annotation, never by hand |
 | code function or method | not a function as a group of requirements | `markGaps()` | the place of the annotation |
 
@@ -727,6 +730,48 @@ every other object of the list.
   behaviour serves each of them. The architecture sets who exchanges what with whom, so the
   parameters of an interface are its requirements, and the behaviour that realizes one derives from
   it, not from a system requirement directly.
+
+### Software architecture
+
+- `architecture/software-architecture.yaml` of a subsystem holds the same three lists as the
+  system architecture: `elements` - its components and the interfaces between them, told apart by
+  their `kind`; `requirements` - the requirements of the software architecture on them (`SA_n`);
+  `decisions` - its rationale and decisions (`SAR_n`, `SAD_n`)
+- a component names in `allocated` the software requirements it realizes, as a subsystem names the
+  system requirements allocated to it
+- a requirement of the software architecture names a software requirement or a decision as
+  uplink, or gives a rationale
+- `architecture/software-architecture.md` describes the components and each interface
+
+**Decision**: the software architecture of a subsystem takes the form of the system architecture,
+one level down, in the folder of the subsystem.
+
+**Why**: r3 and r6 do the same for their level: they break a whole into parts, allocate the
+requirements of the level above to them, and set requirements on them. One form serves both, and a
+tool reads one.
+
+**Rejected**: the component as a field of the software requirement - the allocation would stand at
+the lower level, unlike r3, where the subsystem names its system requirements; and two places
+could say it differently.
+
+### Software design
+
+- `design/software-design.yaml` of a subsystem holds `elements` - its modules, of `kind: module`,
+  each named by its path in the code, such as `trace/gaps` - and `requirements` - the requirements
+  of the software design on them (`SD_n`)
+- a module names in `allocated` the requirements of the software architecture it realizes
+- a requirement of the software design names a requirement of the software architecture as uplink,
+  or gives a rationale
+- the units, the source files of a module, are set by the annotation only and stand in no file
+- `design/software-design.md` describes the modules
+
+**Decision**: the software design takes the form of the software architecture, one level down,
+without decisions of its own.
+
+**Why**: the same form as r3 and r6; the decisions of the parts of a subsystem are those of its
+software architecture.
+
+**Rejected**: the units as elements - the annotation sets them, never by hand (see Breakdown).
 
 ## Annotations
 
@@ -1037,3 +1082,4 @@ review, which code does not pass on its own.
 | 48.1.1 | 2026-11-21 | System architecture: the requirements of the architecture, a list of their own; a section per interface | #699 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 49.1.1 | 2026-11-21 | System architecture: a rationale and a decision have a status | #701 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 50.1.1 | 2026-11-21 | Reviews: the file of the targets, where an id is not unique in the repo | #703 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 51.1.1 | 2026-11-22 | Table files of the levels, table types and Breakdown: r6 and r7; Software architecture; Software design | #705 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
