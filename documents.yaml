@@ -63,8 +63,8 @@ documents:
 - name: requirements/tool-requirements.md
   type: explanation
   level: tool
-  object_version: '20.1.1'
-  object_hash: '6b4da50'
+  object_version: '21.1.1'
+  object_hash: 'ae8c24f'
   status: approved
   verification_method: [review]
 - name: sbom/sbom.md

@@ -409,3 +409,35 @@ requirements:
   safety: ''
   status: approved
   verification_method: [demonstration]
+- object_key: TOOL_36
+  object_version: '1.1.1'
+  feature: versions
+  object_text: make the status check on every pull request - for every link, entry of the allocation
+    and of controls, and annotation, look at the status of the object it names - and report each that
+    names an obsolete object, without failing
+  source_ids: [PROC_23@1.1.1]
+  priority: 'medium'
+  platform_launch: treporting = 1_tools
+  safety: ''
+  status: approved
+  verification_method: [demonstration]
+- object_key: TOOL_37
+  object_version: '1.1.1'
+  feature: versions
+  object_text: refuse to make a baseline that holds both ends of a link that names an obsolete object
+  source_ids: [PROC_23@1.1.1]
+  priority: 'medium'
+  platform_launch: treporting = 3_tools
+  safety: ''
+  status: approved
+  verification_method: [demonstration]
+- object_key: TOOL_38
+  object_version: '1.1.1'
+  feature: versions
+  object_text: compare no link of an obsolete object in the link check
+  source_ids: [PROC_23@1.1.1]
+  priority: 'medium'
+  platform_launch: treporting = 1_tools
+  safety: ''
+  status: approved
+  verification_method: [demonstration]
