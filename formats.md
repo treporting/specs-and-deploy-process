@@ -160,6 +160,11 @@ holds only what the author writes:
 - **feature** is given on r2; r5 takes it from its parent into `mfeature`. A rule has as feature
   the step of the loops of harness.md it holds in: ticket, writing, review, merge, baseline or
   maintenance.
+- **component** names the part of the breakdown that meets a requirement. What it means depends
+  on the level: on r3 the subsystem, by its repo; on r6 the component; on r7 the module, by its
+  path in the code (section Breakdown).
+- **interface** names the interface a requirement of r3 or r6 is met over, by its name, where there
+  is one.
 - **object_version** of every requirement, element and decision of the architecture, hazard,
   control and document: `x.y.z`, written in quotes - x the text and the attributes its schema
   names in `attributes_for_version_x`, y the links, z every other attribute. It is set at the
@@ -171,8 +176,8 @@ holds only what the author writes:
   string, `''` by default. It stands in every object, also where it holds the default. A control
   has none: its class is always the one of its hazard (attributes.md).
 - **rationale** of a requirement below the top that names no uplink - a system requirement, a
-  software requirement, a tool requirement, a control of a hazard - or of an element of the
-  architecture allocated no system requirement: why it stands, for instance derived from the view of
+  software requirement, a tool requirement, a control of a hazard - and of an element of the
+  architecture, where it helps: why it stands, for instance derived from the view of
   its level (ISO29148, clause 5.2.8). The top - user needs, regulatory requirements, hazards -
   has no uplinks.
 - **status** of every requirement: one of the values of section Status values; a requirement
@@ -189,7 +194,7 @@ holds only what the author writes:
   reviewed, a verification at what it verified. As in the gel schema, `source_ids` and
   `target_ids` keep the original ends of the links; the import makes the link `parentOf` from
   them, a derived value: the sources of an object are its parents. Every uplink names the version
-  of its parent, `UN_OPS_10@1.1.1` (PROC_20); so does an entry of `allocated`. Rejected: the
+  of its parent, `UN_OPS_10@1.1.1` (PROC_20). Rejected: the
   uplink in `target_ids`, as it stood before - read so, parent and child turn round.
 - **controls** of a control of a hazard: the system requirements that realize it, with their
   versions, `controls: [SYS_2@1.1.1]` - a down-link between two trees (traceability.md, section Links
@@ -686,17 +691,23 @@ revision of this repo holds them with the new keys.
   interfaces and the models, told apart by their `kind`; `requirements` - the requirements of the
   architecture on them (`ARC_n`); `decisions` - its rationale and decisions (`ARCR_n`, `ARCD_n`)
 - a requirement of the architecture names a system requirement, a rationale or a decision as
-  uplink, or gives a rationale; the elements it is on name it in `allocated`, as a subsystem names
-  there the system requirements allocated to it
+  uplink, or gives a rationale; it names in `component` the subsystem that meets it, by its repo,
+  and in `interface` the interface it is met over, where there is one
 - a rationale and a decision have a `status`, as a requirement has; a requirement names one as
   uplink, as it names any uplink, once it is approved
 - each interface has a section of its own in `architecture/system-architecture.md`,
   `### ARC_n <name> (<subsystem> → <subsystem>)`, that describes it; its requirements stand in
   `requirements`, not there
 
-A system requirement is allocated to the subsystem that realizes it.
-What it needs from another subsystem is a requirement on their interface.
-The other subsystem meets that requirement; the system requirement is not allocated to it.
+A system requirement is broken down into requirements of the architecture.
+Each subsystem that contributes to it gets one, with its share.
+That requirement names the system requirement as uplink, and the subsystem in `component`.
+Which subsystems a system requirement stands on follows from these requirements.
+
+An interface on r3 is logical: what two subsystems exchange, and for what.
+How it is carried - a Go interface, REST, a file - is a matter of the design.
+Two subsystems may have several interfaces. `interface` names one by the name its section in
+system-architecture.md is headed with.
 
 **Example**:
 
@@ -711,7 +722,15 @@ in B:
   func Objects(scope) []Object   // ARC_40: hand the objects of a scope
 ```
 
-SYS_x is allocated to A. B meets ARC_40; without SYS_x, `B.Objects` would stay the same.
+```yaml
+- object_key: ARC_a
+  component: A
+  object_text: 'show the number of the objects of a scope'
+  source_ids: [SYS_x@1.1.1]
+```
+
+B contributes nothing to SYS_x: without it, `B.Objects` would stay the same. ARC_40 has an uplink
+of its own.
 
 ```
 SYS_y: count a review only for the revision it reviewed
@@ -720,8 +739,38 @@ in A:  reviews = B.Reviews(wp)   // needs r.Revision
 in B:  func Reviews(wp) []Review // has to hand the revision too
 ```
 
-SYS_y is allocated to A. It gives their interface a new requirement, "hand each review with the
-revision it reviewed", which B meets.
+```yaml
+- object_key: ARC_b
+  component: A
+  object_text: 'count a review only for the revision it reviewed'
+  source_ids: [SYS_y@1.1.1]
+- object_key: ARC_c
+  component: B
+  interface: Source              # their interface, A → B
+  object_text: 'hand each review with the revision it reviewed'
+  source_ids: [SYS_y@1.1.1]
+```
+
+B contributes to SYS_y: its share is a new requirement on their interface.
+
+**Decision**: a system requirement is broken down into requirements of the architecture, one per
+subsystem that contributes. `component` and `interface` of a requirement name where it stands. No
+element names requirements.
+
+**Why**: which subsystem realizes a system requirement cannot be read off its verb. A system
+requirement speaks at the boundary of the system: "show" holds the computing behind it. A
+requirement of the architecture per subsystem states its share as text, written by someone who had
+to look. Its uplink keeps the version check of the allocation (traceability.md, section The
+allocation).
+
+**Rejected**:
+
+- the system requirement in `allocated` of the one subsystem that realizes it (up to version
+  54.1.1) - who realizes it was read off its verb; either answer looked right, and no check could
+  find it
+- a functional decomposition before the allocation (INCOSE Systems Engineering Handbook,
+  ISO/IEC/IEEE 15288) - it costs a level of its own, the functions; the requirements of the
+  architecture name their system requirements as uplink already
 
 **Decision**: the requirements of the architecture are a list of their own, with no `kind`.
 `elements` stays one list: it only names the subsystems, interfaces and models; what they are is
@@ -729,15 +778,13 @@ described in system-architecture.md.
 
 **Why**: an architecture defines the subsystems and the interfaces, and sets requirements on them.
 A requirement is no element: `kind` tells elements apart, and a requirement among them would be a
-kind that is none. `allocated` already says which requirements stand on an element.
+kind that is none. `component` and `interface` of a requirement say which elements it stands on.
 
 **Rejected**:
 
 - a `kind: requirement` among the elements - a requirement is no element
 - a list per kind, `subsystems` and `interfaces` - the elements are only named there, one list
   serves
-- a field `of` on the requirement, naming its elements - `allocated` says it already, from the
-  other end
 
 **Decision**: a rationale and a decision have a `status` of their own.
 
@@ -766,31 +813,31 @@ every other object of the list.
   system architecture: `elements` - its components and the interfaces between them, told apart by
   their `kind`; `requirements` - the requirements of the software architecture on them (`SA_n`);
   `decisions` - its rationale and decisions (`SAR_n`, `SAD_n`)
-- a component names in `allocated` the software requirements it realizes, as a subsystem names the
-  system requirements allocated to it
 - a requirement of the software architecture names a software requirement, a rationale or a
-  decision as uplink, or gives a rationale
+  decision as uplink, or gives a rationale; it names in `component` the component that meets it,
+  and in `interface` the interface it is met over, where there is one
+- a software requirement is broken down into requirements of the software architecture, one per
+  component that contributes, as a system requirement on r3
 - `architecture/software-architecture.md` describes the components and each interface
 
 **Decision**: the software architecture of a subsystem takes the form of the system architecture,
 one level down, in the folder of the subsystem.
 
-**Why**: r3 and r6 do the same for their level: they break a whole into parts, allocate the
-requirements of the level above to them, and set requirements on them. One form serves both, and a
+**Why**: r3 and r6 do the same for their level: they break a whole into parts, and break the
+requirements of the level above down onto them. One form serves both, and a
 tool reads one.
 
-**Rejected**: the component as a field of the software requirement - the allocation would stand at
-the lower level, unlike r3, where the subsystem names its system requirements; and two places
-could say it differently.
+**Rejected**: the component of r6 named by the software requirement - the breakdown would stand at
+the level above, unlike r3, where a requirement of the architecture names its subsystem; and two
+places could say it differently.
 
 ### Software design
 
 - `design/software-design.yaml` of a subsystem holds `elements` - its modules, of `kind: module`,
   each named by its path in the code, such as `trace/gaps` - and `requirements` - the requirements
   of the software design on them (`SD_n`)
-- a module names in `allocated` the requirements of the software architecture it realizes
 - a requirement of the software design names a requirement of the software architecture as uplink,
-  or gives a rationale
+  or gives a rationale; it names in `component` the module that meets it, by its path
 - the units, the source files of a module, are set by the annotation only and stand in no file
 - `design/software-design.md` describes the modules
 
@@ -1115,3 +1162,4 @@ review, which code does not pass on its own.
 | 52.1.1 | 2026-11-22 | Ids, System architecture, Software architecture: a rationale as uplink, as a decision | #707 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 53.1.1 | 2026-11-23 | System architecture: when a system requirement is allocated to a subsystem, with an example | #709 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 54.1.1 | 2026-11-23 | System architecture: the allocation example without real subsystems | #715 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 55.1.1 | 2026-11-23 | Fields: component, interface; System architecture, Software architecture, Software design: a requirement broken down per part, with component and interface, instead of allocated | #714 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

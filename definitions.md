@@ -298,7 +298,7 @@ can be one reference for the decision to release a product. Traceability serves
 A change of an object reaches what builds on it. Two things are set apart here.
 
 **Link check** - when the x of an object rises, the comparison, for each object that names it - by
-a link, an entry of the allocation or an annotation - of the version it names with the version the
+a link or an annotation - of the version it names with the version the
 object has now. It reports what does not match; it does not decide whether it still fits. That is
 the first question of the impact assessment.
 
@@ -334,3 +334,4 @@ For each part, the assessment goes on to what most tools leave out:
 | 2.1.1 | 2026-10-28 | Traceability; Link check and impact assessment | #274 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 3.1.1 | 2026-10-30 | Open; Change history | #323 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 4.1.1 | 2026-11-13 | specs-and-deploy named by the repo it means now | #641 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 5.1.1 | 2026-11-23 | Link check: no entry of the allocation | #714 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

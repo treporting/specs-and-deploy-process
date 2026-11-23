@@ -512,7 +512,7 @@ default.
 }
 ```
 
-An entry added to or removed from `source_ids` or `allocated` counts for y; an entry that names another
+An entry added to or removed from `source_ids` counts for y; an entry that names another
 version of the same object counts for z. `status` counts for nothing unless the list names it. Every other field
 counts for z.
 
@@ -605,29 +605,31 @@ of today were never approved, so no approved content exists for them.
 
 ## The allocation
 
-The allocation is the field `allocated` of each subsystem in the architecture. The system
-requirements allocated to a subsystem are its requirements, derived directly from r2
-(system-architecture.md). So `allocated` is an uplink: the element stands below the system
-requirements and names its parents. Only its name differs from `source_ids`.
+The allocation is the breakdown of a system requirement into requirements of the architecture, one
+per subsystem that contributes (formats.md, section System architecture). Each names the system
+requirement as uplink, and the subsystem in `component`. Which subsystems a system requirement
+stands on follows from them.
 
-**Decision**: `allocated` names the version of each system requirement, as a link does:
-`allocated: [SYS_1@1.1.1, SYS_2@1.1.1, …]`. The same rules hold: a different x makes an entry
-suspect, and updating it raises z of the element. Both ends lie in the release, so a suspect entry
-blocks the release.
+**Decision**: the allocation is checked as any link: each requirement of the architecture names
+the version of its system requirement, `source_ids: [SYS_9@3.1.2]`. A different x makes it
+suspect. Both ends lie in the release, so a suspect one blocks the release.
 
 **Table allocation** - what only the allocation finds
 
 | | Allocation | Software requirements |
 |---|---|---|
-| Before | SYS_9 `3.1.2` → viewer, reporter | reporter: SR_1 → `SYS_9@3.1.2` |
-| SYS_9 becomes `4.1.2`: "… and exports the selection" | Does the export still belong to viewer and reporter, or does it need converter as well? | SR_1 turns suspect; the reporter checks its own part |
+| Before | SYS_9 `3.1.2` ← ARC_a (viewer), ARC_b (reporter) | reporter: SR_1 → `SYS_9@3.1.2` |
+| SYS_9 becomes `4.1.2`: "… and exports the selection" | ARC_a and ARC_b turn suspect: does the export still belong to viewer and reporter, or does converter need a requirement of its own? | SR_1 turns suspect; the reporter checks its own part |
 
 **Why**: the software requirements of a subsystem can tell only whether their own part still fits.
 Whether another subsystem has to join, only the allocation shows.
 
-**Rejected**: the allocation without versions. The case of the table would go unnoticed. The lists
-are long, and versions make them harder to read; a view in the reporter can help, without changing
-the data.
+**Rejected**:
+
+- the allocation without versions - the case of the table would go unnoticed
+- `allocated` of each subsystem, naming the versions of its system requirements (up to version
+  17.1.1) - replaced by the breakdown into requirements of the architecture (formats.md, section
+  System architecture)
 
 ## Links between trees
 
@@ -723,3 +725,4 @@ Markdown table, and the rules would be kept apart from every other requirement.
 | 15.1.1 | 2026-11-13 | specs-and-deploy named by the repo it means now | #641 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 16.1.1 | 2026-11-13 | The allocation: r4 gone | #653 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 17.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 18.1.1 | 2026-11-23 | The version in the schema: no `allocated`; The allocation: by requirements of the architecture | #714 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
