@@ -136,8 +136,8 @@ to the process does not count into the maturity of the product. The rules are ke
 [rules.yaml](rules.yaml); the table below is generated from it whenever it changes, and names the
 hash of its content, `git hash-object rules.yaml`.
 
-<!-- generated from rules.yaml@4cbd66c - do not edit -->
-**Table rules** - the rules of the work, generated from rules.yaml@4cbd66c
+<!-- generated from rules.yaml@f74f603 - do not edit -->
+**Table rules** - the rules of the work, generated from rules.yaml@f74f603
 
 | Id | Version | Rule |
 |---|---|---|
@@ -162,6 +162,7 @@ hash of its content, `git hash-object rules.yaml`.
 | PROC_20 | 2.1.3 | Every link names the version of the linked object, as `ID@x.y.z`. A link is suspect where the linked object has another x than the link names. A suspect link is reported on every pull request. It blocks a baseline that holds both its ends, compared with the versions in that baseline, not on `main`. See traceability.md. |
 | PROC_21 | 1.1.3 | What is made only to be looked at stays on the machine it is made on: it is not pushed, and no ticket or pull request carries it. The repos are public; whatever reaches them is published. |
 | PROC_22 | 2.1.3 | The text of a requirement does not rely on the content of a document, so that a change of a document never calls for a look at a requirement. |
+| PROC_23 | 1.1.1 | A link that names an obsolete object is reported on every pull request. It blocks a baseline that holds both its ends. The links of an obsolete object are not compared. |
 <!-- end of generated -->
 
 **Decision**: a rule of the harness is approved when it is merged into `main`. It names no criteria
@@ -280,3 +281,4 @@ as soon as possible (PROC_7)
 | 34.1.1 | 2026-11-16 | Platform and launches: a release is a baseline of specs-and-deploy-process or of specs-and-deploy-product; PROC_06 2.1.1 | #668 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 35.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 36.1.1 | 2026-11-19 | Levels: oc1 and oc2 | #688 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 37.1.1 | 2026-11-23 | Table rules: PROC_23, a link and an obsolete object | #711 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
