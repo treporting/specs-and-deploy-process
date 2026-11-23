@@ -126,14 +126,16 @@ The checks run on every pull request - one tool requirement per check.
 
 ## Versions
 
-`TOOL_14`, `TOOL_16` to `TOOL_18` and `TOOL_33`: in [tool-requirements.yaml](tool-requirements.yaml).
+`TOOL_14`, `TOOL_16` to `TOOL_18`, `TOOL_33` and `TOOL_36` to `TOOL_38`: in [tool-requirements.yaml](tool-requirements.yaml).
 
 The tools for the version of an object and the links that name it (traceability.md, PROC_14,
 PROC_20). TOOL_14 checks that an approval sets the right version, against the base commit of the
 pull request; TOOL_33 checks that an approved object has the content it was approved with, a
 document the file approved (section Reviews, How an approval is checked). TOOL_16 makes the link
 check (definitions.md): it reports, and does not fail, as a suspect link blocks the baseline, not
-the pull request. TOOL_17 is that block. TOOL_18 updates a link.
+the pull request. TOOL_17 is that block. TOOL_18 updates a link. TOOL_36 to TOOL_38 do the same
+for the status of its ends (PROC_23): TOOL_36 reports a link that names an obsolete object, TOOL_37
+blocks the baseline, and TOOL_38 leaves the links of an obsolete object out of the link check.
 
 ## sbom
 
@@ -230,3 +232,4 @@ vulnerabilities (REG_EU2024-2847_2).
 | 18.1.1 | 2026-11-04 | test report | #438 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 19.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 20.1.1 | 2026-11-19 | object code report | #688 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 21.1.1 | 2026-11-23 | Versions: TOOL_36 to TOOL_38, a link and an obsolete object | #711 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
