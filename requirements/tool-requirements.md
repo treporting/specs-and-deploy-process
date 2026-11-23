@@ -120,7 +120,7 @@ the tag of a release for all approved objects.
 
 ## CI check
 
-`TOOL_5` to `TOOL_10`, `TOOL_12`, `TOOL_13` and `TOOL_20`: in [tool-requirements.yaml](tool-requirements.yaml).
+`TOOL_5` to `TOOL_10`, `TOOL_12`, `TOOL_13`, `TOOL_20` and `TOOL_39`: in [tool-requirements.yaml](tool-requirements.yaml).
 
 The checks run on every pull request - one tool requirement per check.
 
@@ -233,3 +233,4 @@ vulnerabilities (REG_EU2024-2847_2).
 | 19.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 20.1.1 | 2026-11-19 | object code report | #688 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 21.1.1 | 2026-11-23 | Versions: TOOL_36 to TOOL_38, a link and an obsolete object | #711 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 22.1.1 | 2026-11-23 | CI check: TOOL_39 | #718 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

@@ -21,7 +21,7 @@ documents:
   type: document
   object_version: '22.1.1'
   object_hash: '5c10172'
-  status: approved
+  status: draft
   verification_method: [review]
 - name: definitions.md
   type: document
@@ -65,7 +65,7 @@ documents:
   level: tool
   object_version: '21.1.1'
   object_hash: 'ae8c24f'
-  status: approved
+  status: draft
   verification_method: [review]
 - name: sbom/sbom.md
   type: document

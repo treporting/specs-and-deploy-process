@@ -242,7 +242,7 @@ today is set in the section Continuous integration.
 | every YAML file matches its schema | TOOL_5 |
 | every id in `@implements`, `@verifies` and `@refines` exists, and is approved, in the base commit of the pull request - a requirement added in the same pull request does not count (PROC_5) | TOOL_6 |
 | the annotations counted a second way, apart from the parser | TOOL_7 |
-| the uplink of every SR: the SYS it names exists in specs-and-deploy-product on `main` and is allocated to the subsystem of the SR | TOOL_8 |
+| the uplink of every SR: the SYS it names exists in specs-and-deploy-product on `main`, and a requirement of the architecture names it and the subsystem of the SR in `component` | TOOL_8 |
 | an approved requirement names approved uplinks only | TOOL_9 |
 | every test file belongs to exactly one test level | TOOL_10 |
 | every review result keeps the rules of the section Reviews of formats.md, and the tests of the tools pass | TOOL_12 |
@@ -250,6 +250,7 @@ today is set in the section Continuous integration.
 | every `@implements`, `@verifies` and `@refines` names the version of its id, `ID@x.y.z` | TOOL_20 |
 | every approved object in the changed files that needs a review: the last review result that names it passed, and its revision holds the content x counts of the object as it is now | TOOL_32 |
 | every approved object in the changed files: the content x counts is the one it had when it was approved with that x | TOOL_33 |
+| the `component` of every requirement of r3, r6 and r7 names a part of its level, and its `interface` an interface of its level | TOOL_39 |
 
 ## Open
 
@@ -281,3 +282,4 @@ today is set in the section Continuous integration.
 | 20.1.1 | 2026-11-13 | specs-and-deploy named by the repo it means now | #641 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 21.1.1 | 2026-11-13 | The allocation: r4 gone | #653 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 22.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 23.1.1 | 2026-11-23 | CI checks: TOOL_8 by the requirements of the architecture; TOOL_39 | #718 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
