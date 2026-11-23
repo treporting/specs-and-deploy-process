@@ -280,6 +280,19 @@ follow.
   library, also a fix of an existing one
 - to check against `main`: a baseline is not the state of `main`
 
+**Decision**: a missing link blocks nothing. A parent no child names yet is a gap: the trace shows
+it, no check fails on it.
+
+**Why**:
+
+- a parent could be approved only once a child names it, and a child names it only once it is
+  merged and approved (PROC_12, PROC_13): each would wait for the other
+- our files keep uplinks only (section The parts of the version); a parent cannot know its children
+- a level is written one after the other, so a gap is the normal state between two levels
+
+**Rejected**: a check that every approved parent is named by a child - each would wait for the
+other.
+
 ## When a link is suspect
 
 The link names the full version, such as `SYS_9@3.1.2`. The parent may have moved on in y or z
@@ -726,3 +739,4 @@ Markdown table, and the rules would be kept apart from every other requirement.
 | 16.1.1 | 2026-11-13 | The allocation: r4 gone | #653 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 17.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 18.1.1 | 2026-11-23 | The version in the schema: no `allocated`; The allocation: by requirements of the architecture | #714 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 19.1.1 | 2026-11-23 | Where a suspect link blocks: a missing link blocks nothing | #719 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
