@@ -88,10 +88,11 @@ requirements:
   status: approved
   verification_method: [demonstration]
 - object_key: TOOL_8
-  object_version: '1.1.4'
+  object_version: '2.1.1'
   feature: ci check
   object_text: check that the system requirement a software requirement names as uplink exists in
-    specs-and-deploy on main, and is allocated to the subsystem of the software requirement
+    specs-and-deploy on main, and that a requirement of the architecture names it as uplink and the
+    subsystem of the software requirement in `component`
   source_ids: [PROC_12@2.1.1]
   priority: 'medium'
   platform_launch: treporting = 3_tools
@@ -175,11 +176,11 @@ requirements:
   status: obsolete
   verification_method: [demonstration]
 - object_key: TOOL_16
-  object_version: '1.1.4'
+  object_version: '2.1.1'
   feature: versions
-  object_text: make the link check on every pull request - for every link, entry of the allocation and
-    annotation, compare the version it names with the version its object has - and report each whose
-    object has another x than it names, without failing
+  object_text: make the link check on every pull request - for every link and annotation, compare
+    the version it names with the version its object has - and report each whose object has another x
+    than it names, without failing
   source_ids: [PROC_20@2.1.1]
   priority: 'medium'
   platform_launch: treporting = 1_tools
@@ -198,10 +199,10 @@ requirements:
   status: approved
   verification_method: [demonstration]
 - object_key: TOOL_18
-  object_version: '1.1.4'
+  object_version: '2.1.1'
   feature: versions
-  object_text: update a link, an entry of the allocation or an annotation, named by the one who calls
-    it, to the version its object has now
+  object_text: update a link or an annotation, named by the one who calls it, to the version its
+    object has now
   source_ids: [PROC_20@2.1.1]
   priority: 'medium'
   platform_launch: treporting = 3_tools
@@ -410,10 +411,10 @@ requirements:
   status: approved
   verification_method: [demonstration]
 - object_key: TOOL_36
-  object_version: '1.1.1'
+  object_version: '2.1.1'
   feature: versions
-  object_text: make the status check on every pull request - for every link, entry of the allocation
-    and of controls, and annotation, look at the status of the object it names - and report each that
+  object_text: make the status check on every pull request - for every link, entry of controls and
+    annotation, look at the status of the object it names - and report each that
     names an obsolete object, without failing
   source_ids: [PROC_23@1.1.1]
   priority: 'medium'
@@ -436,6 +437,17 @@ requirements:
   feature: versions
   object_text: compare no link of an obsolete object in the link check
   source_ids: [PROC_23@1.1.1]
+  priority: 'medium'
+  platform_launch: treporting = 1_tools
+  safety: ''
+  status: approved
+  verification_method: [demonstration]
+- object_key: TOOL_39
+  object_version: '1.1.1'
+  feature: ci check
+  object_text: check that the `component` of every requirement of r3, r6 and r7 names a part of its
+    level, and its `interface` an interface of its level
+  source_ids: [PROC_12@2.1.3]
   priority: 'medium'
   platform_launch: treporting = 1_tools
   safety: ''
