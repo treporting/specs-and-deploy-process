@@ -55,7 +55,7 @@ THRC of a threat to our work  →  PROC, a rule of the harness
 
 Every need and every regulatory requirement that treporting realizes has at least one system
 requirement. Every requirement below the top names its uplinks, or gives its rationale where it has
-none, and is allocated to what realizes it on the level below.
+none, and is broken down onto what meets it on the level below.
 
 ## Way of working
 
@@ -88,3 +88,4 @@ and a branch of its own, and reaches `main` only through a pull request - see th
 | 11.1.1 | 2026-11-12 | Table files: the three repos; the product and the tools left | #641, #628 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 12.1.1 | 2026-11-13 | The repo is specs-and-deploy-process: what it holds, and where the product and the tools are | #641 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 13.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 14.1.1 | 2026-11-23 | How the ids hang together: broken down onto the level below | #714 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

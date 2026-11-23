@@ -6,8 +6,8 @@ type: documents
 documents:
 - name: README.md
   type: document
-  object_version: '13.1.1'
-  object_hash: '5e7aff8'
+  object_version: '14.1.1'
+  object_hash: '8c0f10e'
   status: approved
   verification_method: [review]
 - name: harness.md
@@ -25,8 +25,8 @@ documents:
   verification_method: [review]
 - name: definitions.md
   type: document
-  object_version: '4.1.1'
-  object_hash: '4fea14b'
+  object_version: '5.1.1'
+  object_hash: '48fbcb9'
   status: approved
   verification_method: [review]
 - name: standards.md
@@ -37,8 +37,8 @@ documents:
   verification_method: [review]
 - name: formats.md
   type: document
-  object_version: '54.1.1'
-  object_hash: 'acaac8c'
+  object_version: '55.1.1'
+  object_hash: '1222eb2'
   status: approved
   verification_method: [review]
 - name: reviews/README.md
@@ -49,8 +49,8 @@ documents:
   verification_method: [review]
 - name: traceability.md
   type: document
-  object_version: '17.1.1'
-  object_hash: '89a11bc'
+  object_version: '18.1.1'
+  object_hash: '3e30812'
   status: approved
   verification_method: [review]
 - name: regulatory/regulatory-requirements.md
