@@ -703,11 +703,11 @@ The other subsystem meets that requirement; the system requirement is not alloca
 ```
 SYS_x: show the number of objects
 
-in A (reporter):
-  objects = B.Objects(scope)     // interface ARC_12
+in A:
+  objects = B.Objects(scope)     // their interface
   n = len(objects)               // SYS_x: the number is made here
 
-in B (storage):
+in B:
   func Objects(scope) []Object   // ARC_40: hand the objects of a scope
 ```
 
@@ -720,8 +720,8 @@ in A:  reviews = B.Reviews(wp)   // needs r.Revision
 in B:  func Reviews(wp) []Review // has to hand the revision too
 ```
 
-SYS_y is allocated to A. It gives ARC_12 a new requirement, "hand each review with the revision
-it reviewed", which B meets.
+SYS_y is allocated to A. It gives their interface a new requirement, "hand each review with the
+revision it reviewed", which B meets.
 
 **Decision**: the requirements of the architecture are a list of their own, with no `kind`.
 `elements` stays one list: it only names the subsystems, interfaces and models; what they are is
@@ -1114,3 +1114,4 @@ review, which code does not pass on its own.
 | 51.1.1 | 2026-11-22 | Table files of the levels, table types and Breakdown: r6 and r7; Software architecture; Software design | #705 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 52.1.1 | 2026-11-22 | Ids, System architecture, Software architecture: a rationale as uplink, as a decision | #707 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 53.1.1 | 2026-11-23 | System architecture: when a system requirement is allocated to a subsystem, with an example | #709 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 54.1.1 | 2026-11-23 | System architecture: the allocation example without real subsystems | #715 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
