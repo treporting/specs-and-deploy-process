@@ -626,8 +626,8 @@ repeated. A link to a pull request answers only the first.
 
 An id is unique within its document only: its prefix is the `module_prefix` of the document, its
 number the `object_id` within it. The document is unique within its context - the project, and
-for a subsystem the repo. A reference names the id; the context is known where it is written - an
-annotation names software requirements of its own repo only.
+for a subsystem its folder in the repo. A reference names the id; the context is known where it is
+written - an annotation names software requirements of its own subsystem only.
 
 **Table ids** - the prefixes of the ids, and their level
 
@@ -1163,3 +1163,4 @@ review, which code does not pass on its own.
 | 53.1.1 | 2026-11-23 | System architecture: when a system requirement is allocated to a subsystem, with an example | #709 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 54.1.1 | 2026-11-23 | System architecture: the allocation example without real subsystems | #715 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 55.1.1 | 2026-11-23 | Fields: component, interface; System architecture, Software architecture, Software design: a requirement broken down per part, with component and interface, instead of allocated | #714 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 56.1.1 | 2026-11-24 | Ids: the document of a subsystem is unique within its folder | #722 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
