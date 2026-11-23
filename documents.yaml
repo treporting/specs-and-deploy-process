@@ -19,9 +19,9 @@ documents:
   verification_method: [review]
 - name: devops.md
   type: document
-  object_version: '22.1.1'
-  object_hash: '5c10172'
-  status: draft
+  object_version: '23.1.1'
+  object_hash: '3a78a46'
+  status: approved
   verification_method: [review]
 - name: definitions.md
   type: document
@@ -63,9 +63,9 @@ documents:
 - name: requirements/tool-requirements.md
   type: explanation
   level: tool
-  object_version: '21.1.1'
-  object_hash: 'ae8c24f'
-  status: draft
+  object_version: '22.1.1'
+  object_hash: '9b4ad50'
+  status: approved
   verification_method: [review]
 - name: sbom/sbom.md
   type: document
