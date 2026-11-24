@@ -17,11 +17,11 @@ maturity, introductions - stays in Markdown beside it and refers to the YAML.
 | n1 | `regulatory/<module>.yaml` (REG), one file per module | `regulatory/regulatory-requirements.md` | specs-and-deploy-process |
 | r1 | `requirements/user-needs/<function>.yaml` (UN), one file per function | `requirements/user-needs.md` | specs-and-deploy-product |
 | r2 | `requirements/system-requirements.yaml` (SYS) | `requirements/system-requirements.md` | specs-and-deploy-product |
-| r3 | `architecture/system-architecture.yaml` (ARC, with the allocation) | `architecture/system-architecture.md` | specs-and-deploy-product |
+| r3 | `architecture/system-architecture.yaml` (ARC) | `architecture/system-architecture.md` | specs-and-deploy-product |
 | r2 | `requirements/tool-requirements.yaml` (TOOL) | `requirements/tool-requirements.md` | specs-and-deploy-process |
 | r5 | `requirements/software-requirements.yaml` (SR) | `requirements/software-requirements.md` | the subsystem; in tools `software-requirements.yaml`, explained in its README.md |
-| r6 | `architecture/software-architecture.yaml` (SA, with the allocation) | `architecture/software-architecture.md` | the subsystem |
-| r7 | `design/software-design.yaml` (SD, with the allocation) | `design/software-design.md` | the subsystem |
+| r6 | `architecture/software-architecture.yaml` (SA) | `architecture/software-architecture.md` | the subsystem |
+| r7 | `design/software-design.yaml` (SD) | `design/software-design.md` | the subsystem |
 | r1tc, r2tc, r3tc | `testcases/<test level>.yaml` (TC), one file per test level; see Test cases | the explanation of their requirements | specs-and-deploy-product |
 | r5tc, r6tc, r7tc | `testcases/<test level>.yaml` (TC), one file per test level; see Test cases | the explanation of their requirements | the subsystem |
 | rules | `rules.yaml` (PROC) | `harness.md` | specs-and-deploy-process |
@@ -1204,3 +1204,4 @@ review, which code does not pass on its own.
 | 55.1.1 | 2026-11-23 | Fields: component, interface; System architecture, Software architecture, Software design: a requirement broken down per part, with component and interface, instead of allocated | #714 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 56.1.1 | 2026-11-24 | Ids: the document of a subsystem is unique within its folder | #722 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 57.1.1 | 2026-11-24 | Fields: component on r5; Breakdown; Software architecture: r6 at least a description, requirements optional, the component named by the software requirement; Software design: optional; Test cases: r6tc, r6tp, r6tr and r7tc, r7tp, r7tr optional like r6 and r7 | #724 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 58.1.1 | 2026-11-24 | Table of the levels: "with the allocation" removed | #726 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
