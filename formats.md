@@ -994,8 +994,10 @@ levels of its own: the test cases `r<n>tc`, the test procedures `r<n>tp` and the
 | r6 | SwIT | r6tc | `testcases/software-integration.yaml` | the subsystem |
 | r7 | MT | r7tc | `testcases/unit.yaml` | the subsystem |
 
-Where a subsystem has no requirements of r6 or of r7, its test cases of r6tc and of r7tc name the
-software requirements they verify.
+The test levels of r6 and of r7 are optional like their requirements: a subsystem without
+requirements of the software architecture has no r6tc, r6tp and r6tr, and one without a software
+design has no r7tc, r7tp and r7tr. The description `software-architecture.md` is required all the
+same.
 
 The tools keep theirs in `testcases/` of the repo tools, beside `software-requirements.yaml`.
 Today only the tools have test cases, at r5tc.
@@ -1201,4 +1203,4 @@ review, which code does not pass on its own.
 | 54.1.1 | 2026-11-23 | System architecture: the allocation example without real subsystems | #715 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 55.1.1 | 2026-11-23 | Fields: component, interface; System architecture, Software architecture, Software design: a requirement broken down per part, with component and interface, instead of allocated | #714 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 56.1.1 | 2026-11-24 | Ids: the document of a subsystem is unique within its folder | #722 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
-| 57.1.1 | 2026-11-24 | Fields: component on r5; Breakdown; Software architecture: r6 at least a description, requirements optional, the component named by the software requirement; Software design: optional; Test cases: r6tc and r7tc name the software requirements where r6 or r7 has none | #724 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 57.1.1 | 2026-11-24 | Fields: component on r5; Breakdown; Software architecture: r6 at least a description, requirements optional, the component named by the software requirement; Software design: optional; Test cases: r6tc, r6tp, r6tr and r7tc, r7tp, r7tr optional like r6 and r7 | #724 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
