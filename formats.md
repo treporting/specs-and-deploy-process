@@ -161,8 +161,8 @@ holds only what the author writes:
   the step of the loops of harness.md it holds in: ticket, writing, review, merge, baseline or
   maintenance.
 - **component** names the part of the breakdown that meets a requirement. What it means depends
-  on the level: on r3 the subsystem, by its repo; on r6 the component; on r7 the module, by its
-  path in the code (section Breakdown).
+  on the level: on r3 the subsystem, by its repo; on r5 and r6 the component of r6; on r7 the
+  module, by its path in the code (section Breakdown).
 - **interface** names the interface a requirement of r3 or r6 is met over, by its name, where there
   is one.
 - **object_version** of every requirement, element and decision of the architecture, hazard,
@@ -617,8 +617,8 @@ repeated. A link to a pull request answers only the first.
 |---|---|---|---|
 | system | treporting | - | r2 |
 | subsystem | a repo, ARC_1 to ARC_6; or the repo tools, which is not part of the product | reporter-trace, tools | r3 |
-| component | a group of packages with one responsibility | `trace`, `maturity` | r6 (`SA_n`) |
-| module | a Go package or JS module | `trace/gaps` | r7 (`SD_n`), named by its path in the code |
+| component | a group of packages with one responsibility | `trace`, `maturity` | r6 (`software-architecture.md`) |
+| module | a Go package or JS module | `trace/gaps` | its path in the code; r7 (`SD_n`) where there is a software design |
 | unit | a source file | `trace/gaps/mark.go` | the annotation, never by hand |
 | code function or method | not a function as a group of requirements | `markGaps()` | the place of the annotation |
 
@@ -809,40 +809,74 @@ every other object of the list.
 
 ### Software architecture
 
-- `architecture/software-architecture.yaml` of a subsystem holds the same three lists as the
-  system architecture: `elements` - its components and the interfaces between them, told apart by
-  their `kind`; `requirements` - the requirements of the software architecture on them (`SA_n`);
-  `decisions` - its rationale and decisions (`SAR_n`, `SAD_n`)
+- every subsystem has `architecture/software-architecture.md`: its components, the interfaces
+  between them, how they work together, and its decisions
+- a software requirement names in `component` the component of r6 that meets it
+- requirements of the software architecture (`SA_n`) are optional. Where a subsystem has them,
+  `architecture/software-architecture.yaml` holds the same three lists as the system architecture:
+  `elements` - its components and the interfaces between them, told apart by their `kind`;
+  `requirements` - the requirements of the software architecture on them (`SA_n`); `decisions` -
+  its rationale and decisions (`SAR_n`, `SAD_n`)
 - a requirement of the software architecture names a software requirement, a rationale or a
   decision as uplink, or gives a rationale; it names in `component` the component that meets it,
   and in `interface` the interface it is met over, where there is one
-- a software requirement is broken down into requirements of the software architecture, one per
-  component that contributes, as a system requirement on r3
-- `architecture/software-architecture.md` describes the components and each interface
 
-**Decision**: the software architecture of a subsystem takes the form of the system architecture,
-one level down, in the folder of the subsystem.
+**Decision**: r6 is at least the description of the components in `software-architecture.md`;
+requirements of the software architecture are optional.
 
-**Why**: r3 and r6 do the same for their level: they break a whole into parts, and break the
-requirements of the level above down onto them. One form serves both, and a
-tool reads one.
+**Why**: a trial on five software requirements of a subsystem of three packages: each component
+was one module, the requirements of the software design repeated those of the software
+architecture, and where one component does the work, its requirement of the software architecture
+was the software requirement nearly word for word. Automotive SPICE 4.0 SWE.2 asks for the
+components with their interfaces and relationships, their dynamic aspects and the rationale of the
+decisions (BP1 to BP3), in natural language where it serves (BP2, Note 3); it asks for no
+requirements of the architecture of their own.
 
-**Rejected**: the component of r6 named by the software requirement - the breakdown would stand at
-the level above, unlike r3, where a requirement of the architecture names its subsystem; and two
-places could say it differently.
+**Rejected**:
+
+- every software requirement broken down into requirements of the software architecture (up to
+  version 56.1.1) - where one component does the work, it repeats the software requirement
+- r6 left out where a subsystem has one component - the subsystem would not meet SWE.2
+
+**Decision**: a software requirement names in `component` the component of r6 that meets it.
+
+**Why**: it traces the software requirements to the architecture (SWE.2 BP4). Without requirements
+of the software architecture it is the only place the component can stand, and there is no second
+place that could say it differently. Through `@implements`, the source code and the tests of the
+software requirements are grouped by component as well.
+
+**Rejected**: the component named only by the requirements of the software architecture (up to
+version 56.1.1) - where a subsystem has none, the component would stand nowhere.
+
+**Decision**: where a subsystem has requirements of the software architecture, they take the form
+of the system architecture, one level down, in the folder of the subsystem.
+
+**Why**: r3 and r6 then do the same for their level: they break a whole into parts, and break the
+requirements of the level above down onto them. One form serves both, and a tool reads one.
 
 ### Software design
 
-- `design/software-design.yaml` of a subsystem holds `elements` - its modules, of `kind: module`,
-  each named by its path in the code, such as `trace/gaps` - and `requirements` - the requirements
-  of the software design on them (`SD_n`)
+- the software design is optional. Where a subsystem has one, `design/software-design.yaml` holds
+  `elements` - its modules, of `kind: module`, each named by its path in the code, such as
+  `trace/gaps` - and `requirements` - the requirements of the software design on them (`SD_n`)
+- where it has none, the units trace to the software requirements directly through
+  `@implements`
 - a requirement of the software design names a requirement of the software architecture as uplink,
   or gives a rationale; it names in `component` the module that meets it, by its path
 - the units, the source files of a module, are set by the annotation only and stand in no file
-- `design/software-design.md` describes the modules
+- `design/software-design.md` describes the modules, where there is a software design
 
-**Decision**: the software design takes the form of the software architecture, one level down,
-without decisions of its own.
+**Decision**: the software design is optional.
+
+**Why**: SWE.3 BP4 allows to trace the design to the software requirements directly, and its
+Note 8 asks to avoid redundancy by combining the approaches. In the trial, the requirements of the
+software design repeated those of the software architecture a little more technically.
+
+**Rejected**: a software design of every subsystem (up to version 56.1.1) - it repeats the
+software architecture where each component is one module.
+
+**Decision**: where there is a software design, it takes the form of the software architecture,
+one level down, without decisions of its own.
 
 **Why**: the same form as r3 and r6; the decisions of the parts of a subsystem are those of its
 software architecture.
@@ -959,6 +993,11 @@ levels of its own: the test cases `r<n>tc`, the test procedures `r<n>tp` and the
 | r5 | SwVal | r5tc | `testcases/software.yaml` | the subsystem |
 | r6 | SwIT | r6tc | `testcases/software-integration.yaml` | the subsystem |
 | r7 | MT | r7tc | `testcases/unit.yaml` | the subsystem |
+
+The test levels of r6 and of r7 are optional like their requirements: a subsystem without
+requirements of the software architecture has no r6tc, r6tp and r6tr, and one without a software
+design has no r7tc, r7tp and r7tr. The description `software-architecture.md` is required all the
+same.
 
 The tools keep theirs in `testcases/` of the repo tools, beside `software-requirements.yaml`.
 Today only the tools have test cases, at r5tc.
@@ -1164,3 +1203,4 @@ review, which code does not pass on its own.
 | 54.1.1 | 2026-11-23 | System architecture: the allocation example without real subsystems | #715 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 55.1.1 | 2026-11-23 | Fields: component, interface; System architecture, Software architecture, Software design: a requirement broken down per part, with component and interface, instead of allocated | #714 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 56.1.1 | 2026-11-24 | Ids: the document of a subsystem is unique within its folder | #722 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 57.1.1 | 2026-11-24 | Fields: component on r5; Breakdown; Software architecture: r6 at least a description, requirements optional, the component named by the software requirement; Software design: optional; Test cases: r6tc, r6tp, r6tr and r7tc, r7tp, r7tr optional like r6 and r7 | #724 | Claude Opus 5.5, author; Mathias Fischer, reviewer |

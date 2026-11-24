@@ -74,7 +74,9 @@ The data of treporting itself (the reference edgedb) is measured by this chain:
 | 13 | test case, test result of the system test (SysQT) | ISO29119 | RG-SYS-TC, RG-SYS-TR |
 | 14 | test case, test result of the acceptance test (Val) | ISO29119 | RG-SYS-TC, RG-SYS-TR |
 
-With one code coverage level each, the chain has 20 steps.
+With one code coverage level each, the chain has 20 steps. Where a subsystem has no requirements of
+the software architecture, steps 5 and 10 hold no object and are left out of the chain (SYS_79);
+where it has no software design, steps 6 and 9.
 
 ### Platform and launches
 
@@ -282,3 +284,4 @@ as soon as possible (PROC_7)
 | 35.1.1 | 2026-11-17 | Keys without a leading zero | #679 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 36.1.1 | 2026-11-19 | Levels: oc1 and oc2 | #688 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
 | 37.1.1 | 2026-11-23 | Table rules: PROC_23, a link and an obsolete object | #711 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
+| 38.1.1 | 2026-11-24 | Table maturity: steps 5 and 10 left out without requirements of r6, steps 6 and 9 without r7 | #724 | Claude Opus 5.5, author; Mathias Fischer, reviewer |
